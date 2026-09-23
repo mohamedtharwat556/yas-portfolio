@@ -1,0 +1,545 @@
+﻿<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YAS | 技术解决方案、设备与维护</title>
+    <meta name="description" content="YAS专注于销售和供应笔记本电脑、计算机、交互式屏幕、投影仪、POS系统、海康威视监控解决方案及配件，并提供维护和技术支持服务。" />
+    <meta name="author" content="YAS" />
+    <meta name="robots" content="index, follow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style-en.css" />
+    <link rel="icon" type="image/svg+xml" href="YAS_Logo_Final.svg" />
+    <style>
+        .lang-en { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
+    </style>
+    <link rel="stylesheet" href="assets/css/mobile.css" />
+</head>
+<body class="lang-en">
+
+    <!-- 预加载 -->
+    <div class="preloader" id="preloader" aria-hidden="true" role="status">
+        <div class="preloader-inner">
+            <img src="YAS_Logo_Final.svg" alt="YAS" class="preloader-logo" />
+            <p class="preloader-tagline">创造不同的技术解决方案</p>
+            <div class="preloader-bar" aria-hidden="true"><div class="preloader-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- 公告栏 -->
+    <div class="announcement-bar" id="announcementBar" role="banner">
+        <div class="announcement-inner">
+            <span class="ann-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> 官方授权经销商</span>
+            <p class="ann-text"><strong>YAS</strong> — <strong class="ann-hik">海康威视</strong> 埃及官方授权经销商</p>
+            <span class="ann-badge ann-badge--outline"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Authorized Distributor</span>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <nav class="nav-inner">
+                <a href="#home" class="nav-logo" aria-label="YAS 首页">
+                    <img src="YAS_Logo_Final.svg" alt="YAS" class="logo-img" />
+                </a>
+                <ul class="nav-menu" id="navMenu" role="menubar">
+                    <li role="none"><a href="#home"        class="nav-link active" role="menuitem">首页</a></li>
+                    <li role="none"><a href="#about"       class="nav-link" role="menuitem">关于我们</a></li>
+                    <li role="none"><a href="#solutions"   class="nav-link" role="menuitem">解决方案</a></li>
+                    <li role="none"><a href="#products"    class="nav-link" role="menuitem">产品</a></li>
+
+                    <!-- Departments Dropdown -->
+                    <li class="nav-dropdown-wrap" role="none">
+                        <button class="nav-link nav-dropdown-btn" aria-haspopup="true" aria-expanded="false" aria-controls="deptMenu">
+                            部门 <i class="fa-solid fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="nav-dropdown-menu" id="deptMenu" role="menu">
+                            <li role="none"><a href="departments-zh.html#maintenance" class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span><span class="dept-info"><span class="dept-name">维修部</span><span class="dept-desc">设备维修与技术支持</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#laptops"     class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-laptop"></i></span><span class="dept-info"><span class="dept-name">笔记本电脑部</span><span class="dept-desc">适合各种需求的笔记本</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#screens"     class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-tv"></i></span><span class="dept-info"><span class="dept-name">显示屏部</span><span class="dept-desc">交互式及显示屏</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#cashier"     class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-cash-register"></i></span><span class="dept-info"><span class="dept-name">收银机部</span><span class="dept-desc">POS系统与收银设备</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#pc"          class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-desktop"></i></span><span class="dept-info"><span class="dept-name">PC部</span><span class="dept-desc">机构用台式电脑</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#projectors"  class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-video"></i></span><span class="dept-info"><span class="dept-name">投影仪部</span><span class="dept-desc">投影仪与显示设备</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#sales"       class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-chart-line"></i></span><span class="dept-info"><span class="dept-name">销售部</span><span class="dept-desc">销售与供应团队</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#accessories" class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-plug"></i></span><span class="dept-info"><span class="dept-name">配件部</span><span class="dept-desc">外围设备与技术配件</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#programming" class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-code"></i></span><span class="dept-info"><span class="dept-name">编程与媒体采购</span><span class="dept-desc">编程与数字解决方案</span></span></a></li>
+                        </ul>
+                    </li>
+
+                    <li role="none"><a href="#maintenance" class="nav-link" role="menuitem">维护</a></li>
+                    <li role="none"><a href="#faq"         class="nav-link" role="menuitem">常见问题</a></li>
+                    <li role="none"><a href="#contact"     class="nav-link" role="menuitem">联系我们</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="lang-picker" id="langPicker">
+                        <button class="lang-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="选择语言">
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                            <span class="lang-current">中文</span>
+                            <i class="fa-solid fa-chevron-down lang-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="lang-dropdown" role="listbox">
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="index.html">🇪🇬 العربية</a></li>
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="index-en.html">🇬🇧 English</a></li>
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="index-de.html">🇩🇪 Deutsch</a></li>
+                            <li role="option" aria-selected="true"  class="lang-opt lang-opt--active"><a href="index-zh.html">🇨🇳 中文</a></li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn btn-primary btn-sm">联系我们</a>
+                    <button class="burger" id="burgerBtn" aria-label="打开菜单" aria-expanded="false" aria-controls="navMenu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 首页 -->
+        <section class="hero" id="home" aria-label="主要部分">
+            <div class="hero-bg">
+                <video class="hero-video-bg" autoplay muted loop playsinline aria-hidden="true" preload="auto">
+                    <source src="assets/images/company/company-bg.mp4" type="video/mp4" />
+                </video>
+                <div class="hero-video-overlay" aria-hidden="true"></div>
+                <div class="hero-grid-lines" aria-hidden="true"></div>
+                <div class="hero-glow" aria-hidden="true"></div>
+            </div>
+            <div class="container">
+                <div class="hero-inner">
+                    <div class="hero-content" data-reveal="fade-up">
+                        <div class="hero-badge">
+                            <span class="badge-dot" aria-hidden="true"></span>
+                            值得信赖的技术合作伙伴，超过25年经验
+                        </div>
+                        <div class="hero-hik-badge">
+                            <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+                            <strong>海康威视</strong> 埃及官方授权经销商
+                        </div>
+                        <h1 class="hero-title">
+                            <span class="hero-title-static">技术解决方案</span><br />
+                            <span class="hero-rotating-wrap" aria-live="polite">
+                                <span class="hero-rotating-text" id="heroRotatingText"></span><span class="hero-cursor" aria-hidden="true">|</span>
+                            </span>
+                        </h1>
+                        <p class="hero-subtitle"><strong>YAS</strong> — 您的设备、技术解决方案和支持合作伙伴</p>
+                        <p class="hero-desc">我们为机构、企业、大学和学校提供完整的设备和技术解决方案——从设备选择和供应到维护和技术支持。</p>
+                        <div class="hero-actions">
+                            <a href="#solutions" class="btn btn-primary btn-lg"><i class="fa-solid fa-compass" aria-hidden="true"></i> 探索解决方案</a>
+                            <a href="#contact" class="btn btn-outline btn-lg"><i class="fa-solid fa-phone" aria-hidden="true"></i> 联系我们</a>
+                        </div>
+                        <div class="hero-pillars">
+                            <span class="pillar">设备</span><span class="pillar-sep">·</span>
+                            <span class="pillar">解决方案</span><span class="pillar-sep">·</span>
+                            <span class="pillar">供应</span><span class="pillar-sep">·</span>
+                            <span class="pillar">维护</span><span class="pillar-sep">·</span>
+                            <span class="pillar">技术支持</span>
+                        </div>
+                    </div>
+                    <div class="hero-visual" data-reveal="fade-left" aria-hidden="true">
+                        <div class="device-composition">
+                            <div class="device-card dc-laptop"><div class="device-icon"><i class="fa-solid fa-laptop"></i></div><span>笔记本电脑</span></div>
+                            <div class="device-card dc-screen"><div class="device-icon"><i class="fa-solid fa-display"></i></div><span>交互式屏幕</span></div>
+                            <div class="device-card dc-projector"><div class="device-icon"><i class="fa-solid fa-video"></i></div><span>投影仪</span></div>
+                            <div class="device-card dc-pos"><div class="device-icon"><i class="fa-solid fa-cash-register"></i></div><span>收银机与POS</span></div>
+                            <div class="device-card dc-camera"><div class="device-icon"><i class="fa-solid fa-camera"></i></div><span>海康威视</span></div>
+                            <div class="device-card dc-pc"><div class="device-icon"><i class="fa-solid fa-desktop"></i></div><span>台式电脑</span></div>
+                            <div class="device-center">
+                                <img src="YAS_Logo_Final.svg" alt="YAS" class="brand-center-logo" />
+                                <span class="brand-center-sub">一体化技术生态系统</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我们 -->
+        <section class="section about" id="about" aria-labelledby="about-title">
+            <div class="about-bg-wrap" aria-hidden="true">
+                <video class="about-bg-video" autoplay muted loop playsinline preload="auto">
+                    <source src="assets/images/about-bg.mp4" type="video/mp4" />
+                </video>
+                <div class="about-bg-overlay"></div>
+            </div>
+            <div class="container" style="position:relative;z-index:2;">
+                <div class="section-header" data-reveal="fade-up">
+                    <span class="section-label">了解我们</span>
+                    <h2 class="section-title" id="about-title">我们是谁？</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text" data-reveal="fade-right">
+                        <p class="about-lead"><strong>YAS</strong> 是一家专注于销售和供应电子设备及技术解决方案的公司，同时提供维护和技术支持服务。</p>
+                        <p class="about-body">我们为个人、企业、教育机构和各类组织提供解决方案——专注于产品质量、快速交付和持续支持。</p>
+                        <blockquote class="about-quote">
+                            <i class="fa-solid fa-quote-right" aria-hidden="true"></i>
+                            YAS 不仅仅是设备销售商——我们是提供产品、解决方案、供应、维护和技术支持的技术合作伙伴。
+                        </blockquote>
+                    </div>
+                    <div class="about-pillars" data-reveal="fade-left">
+                        <div class="pillar-card"><div class="pillar-icon"><i class="fa-solid fa-microchip"></i></div><h3>设备</h3><p>笔记本电脑、台式机、屏幕、配件</p></div>
+                        <div class="pillar-card"><div class="pillar-icon"><i class="fa-solid fa-lightbulb"></i></div><h3>解决方案</h3><p>交互式、教育、企业</p></div>
+                        <div class="pillar-card"><div class="pillar-icon"><i class="fa-solid fa-truck-fast"></i></div><h3>供应</h3><p>快速可靠的全国配送</p></div>
+                        <div class="pillar-card"><div class="pillar-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div><h3>维护</h3><p>诊断、维修、更换零件</p></div>
+                        <div class="pillar-card"><div class="pillar-icon"><i class="fa-solid fa-headset"></i></div><h3>技术支持</h3><p>售后跟进与支持</p></div>
+                    </div>
+                </div>
+                <div class="team-section" data-reveal="fade-up">
+                    <div class="founder-card">
+                        <div class="founder-img-wrap"><img src="assets/images/team/founder.jpg" alt="Mohamed Yassin博士 — 创始人兼CEO" class="founder-img" loading="lazy" /></div>
+                        <div class="founder-info"><h3 class="founder-name">Mohamed Yassin 博士</h3><span class="founder-title">创始人兼首席执行官</span></div>
+                    </div>
+                    <div class="team-photos">
+                        <div class="team-photo-wrap"><img src="assets/images/team/team-1.jpg" alt="YAS团队" class="team-photo" loading="lazy" /></div>
+                        <div class="team-photo-wrap"><img src="assets/images/team/team-2.jpg" alt="YAS团队" class="team-photo" loading="lazy" /></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 解决方案 -->
+        <section class="section solutions" id="solutions" aria-labelledby="solutions-title">
+            <div class="container">
+                <div class="section-header" data-reveal="fade-up">
+                    <span class="section-label">为您量身定制</span>
+                    <h2 class="section-title" id="solutions-title">满足您需求的解决方案</h2>
+                    <p class="section-desc">每个机构都有不同的需求——我们根据您的要求设计解决方案</p>
+                </div>
+
+                <div class="solution-block solution-block--edu" data-reveal="fade-up">
+                    <div class="solution-tag"><i class="fa-solid fa-graduation-cap"></i> 教育解决方案</div>
+                    <div class="solution-inner">
+                        <div class="solution-text">
+                            <h3>适用于大学、学校和教育机构</h3>
+                            <p>我们帮助教育机构构建技术更先进的学习环境。</p>
+                            <div class="solution-items">
+                                <span><i class="fa-solid fa-check"></i> 交互式屏幕</span>
+                                <span><i class="fa-solid fa-check"></i> 计算机</span>
+                                <span><i class="fa-solid fa-check"></i> 笔记本电脑</span>
+                                <span><i class="fa-solid fa-check"></i> 投影仪</span>
+                                <span><i class="fa-solid fa-check"></i> 配件</span>
+                                <span><i class="fa-solid fa-check"></i> 维护与支持</span>
+                            </div>
+                        </div>
+                        <div class="solution-visual solution-visual--edu" aria-hidden="true">
+                            <div class="sol-icon-main"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="sol-floating-icons">
+                                <span><i class="fa-solid fa-tv"></i></span><span><i class="fa-solid fa-laptop"></i></span>
+                                <span><i class="fa-solid fa-video"></i></span><span><i class="fa-solid fa-desktop"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-block solution-block--corp" data-reveal="fade-up">
+                    <div class="solution-tag"><i class="fa-solid fa-briefcase"></i> 企业解决方案</div>
+                    <div class="solution-inner solution-inner--rev">
+                        <div class="solution-visual solution-visual--corp" aria-hidden="true">
+                            <div class="sol-icon-main"><i class="fa-solid fa-briefcase"></i></div>
+                            <div class="sol-floating-icons">
+                                <span><i class="fa-solid fa-laptop"></i></span><span><i class="fa-solid fa-desktop"></i></span>
+                                <span><i class="fa-solid fa-cash-register"></i></span><span><i class="fa-solid fa-video"></i></span>
+                            </div>
+                        </div>
+                        <div class="solution-text">
+                            <h3>现代工作场所的技术解决方案</h3>
+                            <p>我们帮助企业和机构满足技术需求，提供持续的支持和维护。</p>
+                            <div class="solution-items">
+                                <span><i class="fa-solid fa-check"></i> 笔记本电脑与台式机</span>
+                                <span><i class="fa-solid fa-check"></i> 屏幕与投影仪</span>
+                                <span><i class="fa-solid fa-check"></i> 收银设备</span>
+                                <span><i class="fa-solid fa-check"></i> 技术解决方案</span>
+                                <span><i class="fa-solid fa-check"></i> 维护与支持</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-block solution-block--sec" data-reveal="fade-up">
+                    <div class="solution-tag"><i class="fa-solid fa-certificate"></i> 官方授权经销商 — 海康威视</div>
+                    <div class="solution-inner solution-inner--hik">
+                        <div class="hik-reward-video-wrap">
+                            <video class="hik-reward-video" autoplay muted loop playsinline preload="auto">
+                                <source src="assets/images/company/reward.mp4" type="video/mp4" />
+                            </video>
+                            <div class="hik-reward-overlay"><i class="fa-solid fa-certificate"></i><span>Authorized Distributor</span></div>
+                        </div>
+                        <div class="solution-text solution-text--hik">
+                            <h3>海康威视 — 官方授权经销商</h3>
+                            <p><strong>YAS 是海康威视在埃及的官方授权经销商。</strong>我们提供100%正品产品，附带完整官方保修，为机构和企业提供监控和安防解决方案。</p>
+                            <div class="solution-items">
+                                <span><i class="fa-solid fa-certificate"></i> 官方授权经销商</span>
+                                <span><i class="fa-solid fa-shield-halved"></i> 100%正品产品</span>
+                                <span><i class="fa-solid fa-check"></i> 监控摄像头</span>
+                                <span><i class="fa-solid fa-check"></i> 录像设备</span>
+                                <span><i class="fa-solid fa-check"></i> 完整官方保修</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 产品 -->
+        <section class="section products" id="products" aria-labelledby="products-title">
+            <div class="container">
+                <div class="section-header" data-reveal="fade-up">
+                    <span class="section-label">产品目录</span>
+                    <h2 class="section-title" id="products-title">一体化技术产品与解决方案</h2>
+                    <p class="section-desc">我们提供满足各种需求的各类设备和技术装备</p>
+                </div>
+                <div class="products-tabs" role="tablist">
+                    <button class="tab-btn active" role="tab" data-tab="laptops" aria-selected="true"><i class="fa-solid fa-laptop"></i> 笔记本</button>
+                    <button class="tab-btn" role="tab" data-tab="pc" aria-selected="false"><i class="fa-solid fa-desktop"></i> 台式机</button>
+                    <button class="tab-btn" role="tab" data-tab="screens" aria-selected="false"><i class="fa-solid fa-tv"></i> 交互屏幕</button>
+                    <button class="tab-btn" role="tab" data-tab="projectors" aria-selected="false"><i class="fa-solid fa-video"></i> 投影仪</button>
+                    <button class="tab-btn" role="tab" data-tab="pos" aria-selected="false"><i class="fa-solid fa-cash-register"></i> 收银机</button>
+                    <button class="tab-btn" role="tab" data-tab="hik" aria-selected="false"><i class="fa-solid fa-camera"></i> 海康威视</button>
+                    <button class="tab-btn" role="tab" data-tab="acc" aria-selected="false"><i class="fa-solid fa-plug"></i> 配件</button>
+                </div>
+                <div class="tab-panel active" id="tab-laptops" role="tabpanel">
+                    <div class="product-showcase">
+                        <div class="product-showcase-icon"><i class="fa-solid fa-laptop"></i></div>
+                        <div class="product-showcase-content"><h3>笔记本电脑</h3><p>满足各种需求的多样化笔记本电脑——从学习到商务到专业用途。</p><div class="product-tags"><span class="ptag">学习</span><span class="ptag">商务</span><span class="ptag">专业</span><span class="ptag">日常使用</span></div></div>
+                        <div class="product-video-wrap"><video class="product-video" autoplay muted loop playsinline preload="auto"><source src="assets/images/products/laptops.mp4" type="video/mp4" /></video></div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="tab-pc" role="tabpanel">
+                    <div class="product-showcase">
+                        <div class="product-showcase-icon"><i class="fa-solid fa-desktop"></i></div>
+                        <div class="product-showcase-content"><h3>台式电脑</h3><p>适用于工作环境、机构和教育的台式电脑。</p><div class="product-tags"><span class="ptag">企业</span><span class="ptag">办公室</span><span class="ptag">教育</span><span class="ptag">POS</span></div></div>
+                        <div class="product-video-wrap"><video class="product-video" autoplay muted loop playsinline preload="auto"><source src="assets/images/products/pc.mp4" type="video/mp4" /></video></div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="tab-screens" role="tabpanel">
+                    <div class="product-showcase product-showcase--featured">
+                        <div class="product-showcase-icon"><i class="fa-solid fa-tv"></i></div>
+                        <div class="product-showcase-content"><h3>交互式屏幕</h3><p>用于教育、会议和演示的交互式解决方案。</p><div class="product-tags"><span class="ptag ptag--accent">教育</span><span class="ptag ptag--accent">会议</span><span class="ptag ptag--accent">培训</span></div></div>
+                        <div class="product-video-wrap product-video-wrap--lg"><video class="product-video" autoplay muted loop playsinline preload="auto"><source src="assets/images/products/interactive-screens.mp4" type="video/mp4" /></video></div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="tab-projectors" role="tabpanel">
+                    <div class="product-showcase">
+                        <div class="product-showcase-icon"><i class="fa-solid fa-video"></i></div>
+                        <div class="product-showcase-content"><h3>投影仪</h3><p>适用于教室、会议室和培训的显示设备。</p><div class="product-tags"><span class="ptag">教室</span><span class="ptag">会议室</span><span class="ptag">演示</span></div></div>
+                        <div class="product-video-wrap"><video class="product-video" autoplay muted loop playsinline preload="auto"><source src="assets/images/products/projectors.mp4" type="video/mp4" /></video></div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="tab-pos" role="tabpanel">
+                    <div class="product-showcase">
+                        <div class="product-showcase-icon"><i class="fa-solid fa-cash-register"></i></div>
+                        <div class="product-showcase-content"><h3>收银机与POS系统</h3><p>适用于商店和企业的销售点解决方案。</p><div class="product-tags"><span class="ptag">零售店</span><span class="ptag">企业</span><span class="ptag">POS</span></div></div>
+                        <div class="product-video-wrap"><video class="product-video" autoplay muted loop playsinline preload="auto"><source src="assets/images/products/pos.mp4" type="video/mp4" /></video></div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="tab-hik" role="tabpanel">
+                    <div class="product-showcase product-showcase--hik">
+                        <div class="product-showcase-icon"><i class="fa-solid fa-camera"></i></div>
+                        <div class="product-showcase-content"><h3>海康威视 — 官方授权经销商</h3><p><strong>YAS 是海康威视在埃及的官方授权经销商</strong>——100%正品产品，附带完整官方保修。</p><div class="product-tags"><span class="ptag ptag--hik">官方授权经销商</span><span class="ptag ptag--hik">100%正品</span><span class="ptag">监控摄像头</span><span class="ptag">交互式屏幕</span><span class="ptag">录像机</span></div></div>
+                        <div class="product-video-wrap"><video class="product-video" autoplay muted loop playsinline preload="auto"><source src="assets/images/products/hikvision.mp4" type="video/mp4" /></video></div>
+                    </div>
+                </div>
+                <div class="tab-panel" id="tab-acc" role="tabpanel">
+                    <div class="product-showcase">
+                        <div class="product-showcase-icon"><i class="fa-solid fa-plug"></i></div>
+                        <div class="product-showcase-content"><h3>技术配件</h3><p>完善您的技术装备所需的一切。</p><div class="product-tags"><span class="ptag">电脑配件</span><span class="ptag">外设</span><span class="ptag">线缆</span></div></div>
+                        <div class="product-video-wrap"><video class="product-video" autoplay muted loop playsinline preload="auto"><source src="assets/images/products/accessories.mp4" type="video/mp4" /></video></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 品牌 -->
+        <section class="section brands" id="brands" aria-labelledby="brands-title">
+            <div class="brands-video-bg" aria-hidden="true">
+                <video autoplay muted loop playsinline preload="auto"><source src="assets/images/hero/hero-bg.mp4" type="video/mp4" /></video>
+                <div class="brands-video-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="section-header" data-reveal="fade-up">
+                    <span class="section-label">我们的合作伙伴</span>
+                    <h2 class="section-title" id="brands-title">我们信赖的全球品牌</h2>
+                    <p class="section-desc">我们与世界最大品牌合作，确保我们提供的每件产品的质量</p>
+                </div>
+                <div class="hik-official-card" data-reveal="fade-up">
+                    <div class="hik-official-logo"><i class="fa-solid fa-shield-halved"></i><span>Hikvision</span></div>
+                    <div class="hik-official-text"><h3>官方授权经销商</h3><p>YAS 是海康威视在埃及的官方授权经销商——我们保证100%正品产品，附带制造商完整官方保修。</p></div>
+                    <div class="hik-official-badges">
+                        <span><i class="fa-solid fa-certificate"></i> Authorized Distributor</span>
+                        <span><i class="fa-solid fa-shield-halved"></i> 官方保修</span>
+                        <span><i class="fa-solid fa-box-open"></i> 100%正品</span>
+                    </div>
+                </div>
+                <div class="brands-grid" data-reveal="fade-up">
+                    <div class="brand-item"><span class="brand-name brand-apple">Apple</span></div>
+                    <div class="brand-item"><span class="brand-name brand-dell">Dell</span></div>
+                    <div class="brand-item"><span class="brand-name brand-hp">HP</span></div>
+                    <div class="brand-item"><span class="brand-name brand-samsung">Samsung</span></div>
+                    <div class="brand-item"><span class="brand-name brand-lenovo">Lenovo</span></div>
+                    <div class="brand-item"><span class="brand-name brand-microsoft">Microsoft</span></div>
+                    <div class="brand-item"><span class="brand-name brand-asus">Asus</span></div>
+                    <div class="brand-item"><span class="brand-name brand-acer">Acer</span></div>
+                    <div class="brand-item"><span class="brand-name brand-hik">Hikvision</span></div>
+                    <div class="brand-item"><span class="brand-name brand-promethean">Promethean</span></div>
+                    <div class="brand-item"><span class="brand-name brand-epson">Epson</span></div>
+                    <div class="brand-item"><span class="brand-name brand-viewsonic">ViewSonic</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 维护 -->
+        <section class="section maintenance" id="maintenance" aria-labelledby="maintenance-title">
+            <div class="container">
+                <div class="section-header" data-reveal="fade-up">
+                    <span class="section-label">维护与支持</span>
+                    <h2 class="section-title maintenance-title" id="maintenance-title">我们不只是销售技术...<br /><span class="title-accent">我们维护它</span></h2>
+                </div>
+                <div class="maintenance-grid">
+                    <div class="maintenance-intro" data-reveal="fade-right">
+                        <p>YAS 的服务延伸到销售之外——我们为设备和技术装备提供维护、检查和技术支持服务。</p>
+                        <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 咨询维护服务</a>
+                    </div>
+                    <div class="maintenance-services" data-reveal="fade-left">
+                        <div class="maint-card"><i class="fa-solid fa-stethoscope"></i><h4>故障诊断</h4></div>
+                        <div class="maint-card"><i class="fa-solid fa-laptop"></i><h4>笔记本维护</h4></div>
+                        <div class="maint-card"><i class="fa-solid fa-desktop"></i><h4>台式机维护</h4></div>
+                        <div class="maint-card"><i class="fa-solid fa-tv"></i><h4>屏幕维护</h4></div>
+                        <div class="maint-card"><i class="fa-solid fa-wrench"></i><h4>设备维护</h4></div>
+                        <div class="maint-card"><i class="fa-solid fa-microchip"></i><h4>零件更换</h4></div>
+                        <div class="maint-card"><i class="fa-solid fa-magnifying-glass"></i><h4>技术检查</h4></div>
+                        <div class="maint-card"><i class="fa-solid fa-headset"></i><h4>技术支持</h4></div>
+                        <div class="maint-card"><i class="fa-solid fa-rotate"></i><h4>售后跟进</h4></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="section-header" data-reveal="fade-up">
+                    <span class="section-label">常见问题</span>
+                    <h2 class="section-title" id="faq-title">有问题吗？</h2>
+                    <p class="section-desc">最常见问题的答案</p>
+                </div>
+                <div class="faq-list" data-reveal="fade-up">
+                    <details class="faq-item">
+                        <summary class="faq-q"><i class="fa-solid fa-plus faq-icon"></i> 你们与个人还是只与企业合作？</summary>
+                        <div class="faq-a"><p>我们同等对待个人、企业、教育机构和政府实体。我们欢迎所有客户，无论订单大小。</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-q"><i class="fa-solid fa-plus faq-icon"></i> 产品是全新的还是翻新的？</summary>
+                        <div class="faq-a"><p>我们提供全新和精心进口的产品，为客户提供灵活的选择以满足其需求和预算。</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-q"><i class="fa-solid fa-plus faq-icon"></i> 工作时间是什么时候？</summary>
+                        <div class="faq-a"><p>工作时间为早上8点至下午5点。您可以在此期间通过WhatsApp或直接致电联系我们。</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-q"><i class="fa-solid fa-plus faq-icon"></i> 购买后提供维护服务吗？</summary>
+                        <div class="faq-a"><p>是的，我们提供完整的维护服务，包括笔记本电脑、台式机、屏幕等设备的诊断、维修和零件更换。</p></div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- 行动召唤 -->
+        <section class="section cta-section" id="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-inner" data-reveal="fade-up">
+                    <h2 id="cta-title">您的机构需要技术解决方案吗？</h2>
+                    <p>无论您是大学、学校、企业还是机构——我们都能帮助您确定技术需求并提供合适的设备和解决方案。</p>
+                    <div class="cta-actions">
+                        <a href="#contact" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> 联系YAS</a>
+                        <a href="https://wa.me/201550526397" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> 与我们的团队聊天</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系我们 -->
+        <section class="section contact" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section-header" data-reveal="fade-up">
+                    <span class="section-label">我们随时为您服务</span>
+                    <h2 class="section-title" id="contact-title">联系我们</h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info" data-reveal="fade-right">
+                        <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div><div class="contact-detail"><h4>地址</h4><p>埃及达米埃塔省扎尔卡市</p></div></div>
+                        <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-phone"></i></div><div class="contact-detail"><h4>维护电话</h4><a href="tel:+201550526397" class="contact-link" dir="ltr">+20 15 50526397</a></div></div>
+                        <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-phone"></i></div><div class="contact-detail"><h4>销售电话</h4><a href="tel:+201111149333" class="contact-link" dir="ltr">+20 11 11149333</a></div></div>
+                        <div class="contact-item"><div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div><div class="contact-detail"><h4>WhatsApp</h4><a href="https://wa.me/201550526397" class="contact-link" target="_blank" rel="noopener noreferrer" dir="ltr">+20 15 50526397</a></div></div>
+                        <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-envelope"></i></div><div class="contact-detail"><h4>电子邮件</h4><a href="mailto:info@yascity.com" class="contact-link">info@yascity.com</a></div></div>
+                        <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-clock"></i></div><div class="contact-detail"><h4>工作时间</h4><p>周一至周六<br />上午9点 — 晚上9点</p></div></div>
+                        <div class="contact-socials">
+                            <a href="https://www.facebook.com/yasegpt" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i> YAS Tech Egypt</a>
+                            <a href="https://wa.me/201550526397" class="social-link social-link--wa" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="contact-tagline" data-reveal="fade-left">
+                        <div class="tagline-card">
+                            <div class="tagline-logo">YAS</div>
+                            <p class="tagline-text">从设备开始的技术解决方案...<br />不在销售时结束。</p>
+                            <div class="tagline-pillars">
+                                <span>设备</span><span>解决方案</span><span>供应</span><span>维护</span><span>支持</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map" data-reveal="fade-up">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d217.09!2d31.635264!3d31.221682!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f79f1b1c8cf3b3%3A0xb1f3c0f8c8c8c8ae!2sYAS!5e0!3m2!1szh-CN!2seg!4v1700000000000" width="100%" height="320" style="border:0;border-radius:16px;" allowfullscreen="" loading="lazy" title="YAS位置地图"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="YAS_Logo_Final.svg" alt="YAS" class="footer-logo-img" />
+                    <p>技术解决方案。设备。支持与维护。</p>
+                    <p class="footer-tagline">您每个需求的技术合作伙伴。</p>
+                </div>
+                <nav class="footer-nav" aria-label="导航链接">
+                    <h4>链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#solutions">解决方案</a></li>
+                        <li><a href="#products">产品</a></li>
+                        <li><a href="#maintenance">维护</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                        <li><a href="https://www.yas-eg.com" target="_blank" rel="noopener noreferrer">🛒 网上商店</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-contact">
+                    <h4>联系方式</h4>
+                    <a href="tel:+201550526397" dir="ltr">+20 15 50526397</a>
+                    <a href="tel:+201111149333" dir="ltr">+20 11 11149333</a>
+                    <a href="https://wa.me/201550526397" target="_blank" rel="noopener noreferrer" dir="ltr">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> +20 15 50526397
+                    </a>
+                    <a href="mailto:info@yascity.com">info@yascity.com</a>
+                    <a href="https://www.facebook.com/yasegpt" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i> YAS Tech Egypt</a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>© 2026 YAS — 版权所有</p></div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部" title="返回顶部">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/script-zh.js"></script>
+</body>
+</html>

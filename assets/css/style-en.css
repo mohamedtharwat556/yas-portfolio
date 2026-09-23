@@ -1,0 +1,94 @@
+/* ============================================================
+   YAS — style-en.css
+   English (LTR) overrides
+   ============================================================ */
+
+/* ── Base LTR ── */
+.lang-en {
+    font-family: 'Inter', 'Tajawal', sans-serif;
+    direction: ltr;
+}
+
+/* ── RTL → LTR flips ── */
+.lang-en .about-quote {
+    border-inline-start: none;
+    border-left: 3px solid var(--primary);
+    border-radius: 0 0 var(--radius) 0;
+    padding-inline-start: 0;
+    padding-left: 1.25rem;
+}
+
+.lang-en .service-list li {
+    padding-inline-start: 0;
+    padding-left: 1.25rem;
+}
+.lang-en .service-list li::before {
+    right: auto;
+    left: 0;
+}
+
+.lang-en .faq-a {
+    padding: 0 var(--sp-6) var(--sp-5) calc(var(--sp-6) + 1.2rem + var(--sp-3));
+    direction: ltr;
+}
+
+/* Nav menu mobile — open from left in LTR */
+@media (max-width: 1024px) {
+    .lang-en .nav-menu {
+        right: auto;
+        left: -100%;
+        transition: left var(--tr-slow);
+    }
+    .lang-en .nav-menu.open {
+        left: 0;
+        right: auto;
+    }
+}
+
+/* Corp flow arrows — LTR direction */
+.lang-en .flow-arrow i.fa-arrow-left::before {
+    content: '\f061'; /* fa-arrow-right */
+}
+
+/* Store arrow */
+.lang-en .store-arrow {
+    transform: none;
+}
+.lang-en .store-link-btn:hover .store-arrow {
+    transform: translateX(4px);
+}
+
+/* ── Language Switcher ── */
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-black);
+    color: rgba(255,255,255,.75);
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: var(--radius-full);
+    padding: 5px 12px;
+    letter-spacing: 0.06em;
+    transition: all var(--tr);
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.lang-switcher:hover {
+    background: rgba(255,255,255,.18);
+    color: #fff;
+    border-color: rgba(255,255,255,.4);
+    transform: translateY(-1px);
+}
+.lang-switcher i {
+    font-size: 11px;
+    opacity: .8;
+}
+
+@media (max-width: 480px) {
+    .lang-switcher span { display: none; }
+    .lang-switcher { padding: 6px 8px; }
+    .lang-switcher i { font-size: 13px; opacity: 1; }
+}

@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YAS | 部门</title>
+    <meta name="description" content="了解YAS各部门 — 维修、笔记本、显示屏、收银机、PC、投影仪、销售、配件、编程与媒体采购。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style-en.css" />
+    <link rel="stylesheet" href="assets/css/departments.css" />
+    <link rel="icon" type="image/svg+xml" href="YAS_Logo_Final.svg" />
+    <style>body{font-family:'Noto Sans SC',sans-serif;}</style>
+    <link rel="stylesheet" href="assets/css/mobile.css" />
+</head>
+<body class="lang-en dept-page">
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement-bar" id="announcementBar" role="banner">
+        <div class="announcement-inner">
+            <span class="ann-badge"><i class="fa-solid fa-certificate" aria-hidden="true"></i> 官方授权经销商</span>
+            <p class="ann-text"><strong>YAS</strong> — 埃及 <strong class="ann-hik">Hikvision</strong> 官方授权分销商</p>
+            <span class="ann-badge ann-badge--outline"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Authorized Distributor</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <nav class="nav-inner">
+                <a href="index-zh.html" class="nav-logo" aria-label="YAS 首页">
+                    <img src="YAS_Logo_Final.svg" alt="YAS" class="logo-img" />
+                </a>
+                <ul class="nav-menu" id="navMenu" role="menubar">
+                    <li role="none"><a href="index-zh.html#home"        class="nav-link" role="menuitem">首页</a></li>
+                    <li role="none"><a href="index-zh.html#about"       class="nav-link" role="menuitem">关于我们</a></li>
+                    <li role="none"><a href="index-zh.html#solutions"   class="nav-link" role="menuitem">解决方案</a></li>
+                    <li role="none"><a href="index-zh.html#products"    class="nav-link" role="menuitem">产品</a></li>
+                    <li class="nav-dropdown-wrap" role="none">
+                        <button class="nav-link nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false" aria-controls="deptMenu">
+                            部门 <i class="fa-solid fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="nav-dropdown-menu" id="deptMenu" role="menu">
+                            <li role="none"><a href="departments-zh.html#maintenance" class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span><span class="dept-info"><span class="dept-name">维修部</span><span class="dept-desc">设备维修与技术支持</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#laptops"     class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-laptop"></i></span><span class="dept-info"><span class="dept-name">笔记本电脑部</span><span class="dept-desc">适合各种需求的笔记本</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#screens"     class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-tv"></i></span><span class="dept-info"><span class="dept-name">显示屏部</span><span class="dept-desc">交互式及显示屏</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#cashier"     class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-cash-register"></i></span><span class="dept-info"><span class="dept-name">收银机部</span><span class="dept-desc">POS系统与收银设备</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#pc"          class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-desktop"></i></span><span class="dept-info"><span class="dept-name">PC部</span><span class="dept-desc">机构用台式电脑</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#projectors"  class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-video"></i></span><span class="dept-info"><span class="dept-name">投影仪部</span><span class="dept-desc">投影仪与显示设备</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#sales"       class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-chart-line"></i></span><span class="dept-info"><span class="dept-name">销售部</span><span class="dept-desc">销售与供应团队</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#accessories" class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-plug"></i></span><span class="dept-info"><span class="dept-name">配件部</span><span class="dept-desc">外围设备与技术配件</span></span></a></li>
+                            <li role="none"><a href="departments-zh.html#programming" class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-code"></i></span><span class="dept-info"><span class="dept-name">编程与媒体采购</span><span class="dept-desc">编程与数字解决方案</span></span></a></li>
+                        </ul>
+                    </li>
+                    <li role="none"><a href="index-zh.html#maintenance" class="nav-link" role="menuitem">维护</a></li>
+                    <li role="none"><a href="index-zh.html#faq"         class="nav-link" role="menuitem">常见问题</a></li>
+                    <li role="none"><a href="index-zh.html#contact"     class="nav-link" role="menuitem">联系我们</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="lang-picker" id="langPicker">
+                        <button class="lang-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="选择语言">
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                            <span class="lang-current">ZH</span>
+                            <i class="fa-solid fa-chevron-down lang-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="lang-dropdown" role="listbox" aria-label="选择语言">
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="departments.html">🇪🇬 العربية</a></li>
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="departments-en.html">🇬🇧 English</a></li>
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="departments-de.html">🇩🇪 Deutsch</a></li>
+                            <li role="option" aria-selected="true"  class="lang-opt lang-opt--active"><a href="departments-zh.html">🇨🇳 中文</a></li>
+                        </ul>
+                    </div>
+                    <a href="index-zh.html#contact" class="btn btn-primary btn-sm">联系我们</a>
+                    <button class="burger" id="burgerBtn" aria-label="打开菜单" aria-expanded="false" aria-controls="navMenu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PAGE HERO -->
+        <section class="dept-hero">
+            <div class="dept-hero-bg" aria-hidden="true"></div>
+            <div class="container">
+                <div class="dept-hero-inner" data-reveal="fade-up">
+                    <div class="dept-hero-breadcrumb">
+                        <a href="index-zh.html">首页</a>
+                        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                        <span>部门</span>
+                    </div>
+                    <h1 class="dept-hero-title"><span class="text-accent">YAS</span> 各部门</h1>
+                    <p class="dept-hero-desc">每个部门专注于自己的领域 — 专业团队随时为您服务</p>
+                    <div class="dept-pills" role="navigation" aria-label="部门导航">
+                        <a href="#maintenance" class="dept-pill"><i class="fa-solid fa-screwdriver-wrench"></i> 维修</a>
+                        <a href="#laptops"     class="dept-pill"><i class="fa-solid fa-laptop"></i> 笔记本</a>
+                        <a href="#screens"     class="dept-pill"><i class="fa-solid fa-tv"></i> 显示屏</a>
+                        <a href="#cashier"     class="dept-pill"><i class="fa-solid fa-cash-register"></i> 收银机</a>
+                        <a href="#pc"          class="dept-pill"><i class="fa-solid fa-desktop"></i> PC</a>
+                        <a href="#projectors"  class="dept-pill"><i class="fa-solid fa-video"></i> 投影仪</a>
+                        <a href="#sales"       class="dept-pill"><i class="fa-solid fa-chart-line"></i> 销售</a>
+                        <a href="#accessories" class="dept-pill"><i class="fa-solid fa-plug"></i> 配件</a>
+                        <a href="#programming" class="dept-pill"><i class="fa-solid fa-code"></i> 编程</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. 维修 -->
+        <section class="dept-section" id="maintenance" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--maintenance">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <div>
+                            <span class="dept-block-label">第01部门</span>
+                            <h2 class="dept-block-title">维修部</h2>
+                            <p class="dept-block-sub">让您的设备始终保持最佳状态</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>YAS维修部专门诊断和修复各类电子和技术设备。我们提供从初步检测和故障诊断到完整修复和组件更换的全面服务。</p>
+                            <p>我们的专业技术团队确保快速诊断和精确修复，维护设备质量并延长使用寿命。</p>
+                        </div>
+                        <div class="dept-services-grid">
+                            <div class="dept-service-card"><i class="fa-solid fa-stethoscope"></i><h4>故障诊断</h4><p>精确检测以识别问题和原因</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-laptop"></i><h4>笔记本维修</h4><p>屏幕、电池、键盘等维修</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-desktop"></i><h4>PC维修</h4><p>清洁、组件更换、性能升级</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-tv"></i><h4>显示屏维修</h4><p>交互式和显示屏修复</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-microchip"></i><h4>组件更换</h4><p>原装备件，附维修保修</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-headset"></i><h4>技术支持</h4><p>维修后跟进和持续支持</p></div>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index-zh.html#contact" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 联系维修部</a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 笔记本 -->
+        <section class="dept-section dept-section--alt" id="laptops" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--laptops">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon"><i class="fa-solid fa-laptop"></i></div>
+                        <div>
+                            <span class="dept-block-label">第02部门</span>
+                            <h2 class="dept-block-title">笔记本电脑部</h2>
+                            <p class="dept-block-sub">适合每种需求和预算的笔记本电脑</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>YAS笔记本电脑部提供各种满足不同需求的笔记本电脑——从学习和日常使用设备到商务和专业级机器。</p>
+                            <p>我们与Apple、Dell、HP、联想、宏碁和华硕等主要全球品牌合作，提供多种规格和价格范围以满足所有人的需求。</p>
+                        </div>
+                        <div class="dept-tags-wrap">
+                            <span class="dept-tag"><i class="fa-solid fa-graduation-cap"></i> 学习用</span>
+                            <span class="dept-tag"><i class="fa-solid fa-briefcase"></i> 商务用</span>
+                            <span class="dept-tag"><i class="fa-solid fa-code"></i> 编程用</span>
+                            <span class="dept-tag"><i class="fa-solid fa-palette"></i> 设计用</span>
+                            <span class="dept-tag"><i class="fa-solid fa-gamepad"></i> 游戏用</span>
+                            <span class="dept-tag"><i class="fa-solid fa-user"></i> 日常使用</span>
+                            <span class="dept-tag"><i class="fa-solid fa-building"></i> 机构用</span>
+                        </div>
+                        <div class="dept-brands"><span>Apple</span><span>Dell</span><span>HP</span><span>联想</span><span>华硕</span><span>宏碁</span><span>Microsoft</span></div>
+                        <div class="dept-cta">
+                            <a href="index-zh.html#contact" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 咨询笔记本电脑</a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 显示屏 -->
+        <section class="dept-section" id="screens" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--screens">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon"><i class="fa-solid fa-tv"></i></div>
+                        <div>
+                            <span class="dept-block-label">第03部门</span>
+                            <h2 class="dept-block-title">交互式显示屏部</h2>
+                            <p class="dept-block-sub">面向教育和商业的交互式显示解决方案</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>显示屏部专门提供适用于教室、会议室、培训中心和会议厅的最新交互式显示技术。</p>
+                            <p>我们提供来自可信全球品牌的多种尺寸交互式显示屏，并提供安装、调试和售后技术支持。</p>
+                        </div>
+                        <div class="dept-services-grid">
+                            <div class="dept-service-card"><i class="fa-solid fa-graduation-cap"></i><h4>教育</h4><p>教室和报告厅</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-briefcase"></i><h4>商务</h4><p>会议室和演示</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-chalkboard-user"></i><h4>培训</h4><p>培训中心和专业机构</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-wrench"></i><h4>安装与支持</h4><p>专业安装和持续支持</p></div>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index-zh.html#contact" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 咨询显示屏</a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 收银机 -->
+        <section class="dept-section dept-section--alt" id="cashier" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--cashier">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon"><i class="fa-solid fa-cash-register"></i></div>
+                        <div>
+                            <span class="dept-block-label">第04部门</span>
+                            <h2 class="dept-block-title">收银机与POS部</h2>
+                            <p class="dept-block-sub">适合各类业务的销售点解决方案</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>收银机部为零售店、餐厅、药店和各种规模的企业提供一体化POS解决方案。</p>
+                            <p>我们提供适合您业务类型的各种规格收银设备，并提供配送、安装和技术支持服务。</p>
+                        </div>
+                        <div class="dept-tags-wrap">
+                            <span class="dept-tag"><i class="fa-solid fa-store"></i> 零售店</span>
+                            <span class="dept-tag"><i class="fa-solid fa-utensils"></i> 餐厅</span>
+                            <span class="dept-tag"><i class="fa-solid fa-pills"></i> 药店</span>
+                            <span class="dept-tag"><i class="fa-solid fa-building"></i> 企业</span>
+                            <span class="dept-tag"><i class="fa-solid fa-cart-shopping"></i> 超市</span>
+                            <span class="dept-tag"><i class="fa-solid fa-scissors"></i> 服务业</span>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index-zh.html#contact" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 咨询收银设备</a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PC -->
+        <section class="dept-section" id="pc" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--pc">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon"><i class="fa-solid fa-desktop"></i></div>
+                        <div>
+                            <span class="dept-block-label">第05部门</span>
+                            <h2 class="dept-block-title">PC设备部</h2>
+                            <p class="dept-block-sub">面向机构和企业的台式电脑</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>PC部专注于为办公室、机构和教育环境提供解决方案。我们提供适合各种使用类型和预算的不同规格设备。</p>
+                            <p>无论您需要单台设备、完整配备的办公室，还是教育机构的完整计算机实验室，我们都能提供合适的解决方案。</p>
+                        </div>
+                        <div class="dept-services-grid">
+                            <div class="dept-service-card"><i class="fa-solid fa-building-columns"></i><h4>教育机构</h4><p>一体化计算机实验室</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-briefcase"></i><h4>工作环境</h4><p>企业和机构办公PC</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-cash-register"></i><h4>销售点</h4><p>专用于收银系统的PC</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-arrow-up"></i><h4>升级改进</h4><p>组件升级以提升性能</p></div>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index-zh.html#contact" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 咨询PC设备</a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 投影仪 -->
+        <section class="dept-section dept-section--alt" id="projectors" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--projectors">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon"><i class="fa-solid fa-video"></i></div>
+                        <div>
+                            <span class="dept-block-label">第06部门</span>
+                            <h2 class="dept-block-title">投影仪部</h2>
+                            <p class="dept-block-sub">适合各种场所的专业显示设备</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>投影仪部提供适用于教室、会议室、培训场所和商业演示的各种显示设备。</p>
+                            <p>我们与爱普生、ViewSonic等可信品牌合作，提供适合场地大小和使用性质的规格。</p>
+                        </div>
+                        <div class="dept-tags-wrap">
+                            <span class="dept-tag"><i class="fa-solid fa-school"></i> 教室</span>
+                            <span class="dept-tag"><i class="fa-solid fa-people-group"></i> 会议室</span>
+                            <span class="dept-tag"><i class="fa-solid fa-chalkboard-user"></i> 培训</span>
+                            <span class="dept-tag"><i class="fa-solid fa-film"></i> 演示</span>
+                            <span class="dept-tag"><i class="fa-solid fa-mosque"></i> 活动厅</span>
+                        </div>
+                        <div class="dept-brands"><span>Epson</span><span>ViewSonic</span><span>BenQ</span><span>Optoma</span></div>
+                        <div class="dept-cta">
+                            <a href="index-zh.html#contact" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 咨询投影仪</a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. 销售 -->
+        <section class="dept-section" id="sales" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--sales">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div>
+                            <span class="dept-block-label">第07部门</span>
+                            <h2 class="dept-block-title">销售部</h2>
+                            <p class="dept-block-sub">专注于各行业供应和销售的专业团队</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>YAS销售部处理客户请求，识别其技术需求，提出适当解决方案，并尽快执行供应操作。</p>
+                            <p>我们为个人、企业、教育机构和政府机构提供服务，提供具有竞争力的定价和灵活的付款及供应选项。</p>
+                        </div>
+                        <div class="dept-services-grid">
+                            <div class="dept-service-card"><i class="fa-solid fa-magnifying-glass"></i><h4>需求评估</h4><p>了解您的需求并推荐最佳解决方案</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-file-invoice-dollar"></i><h4>报价</h4><p>有竞争力的定价和定制优惠</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-truck-fast"></i><h4>快速供应</h4><p>配送至埃及所有省份</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-handshake"></i><h4>供应合同</h4><p>大型机构定期合同</p></div>
+                        </div>
+                        <div class="dept-contact-info">
+                            <div class="dept-contact-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <div><span>销售电话</span><a href="tel:+201111149333" dir="ltr">+20 11 11149333</a></div>
+                            </div>
+                            <div class="dept-contact-item">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <div><span>WhatsApp</span><a href="https://wa.me/201550526397" target="_blank" rel="noopener noreferrer" dir="ltr">+20 15 50526397</a></div>
+                            </div>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index-zh.html#contact" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 联系销售团队</a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. 配件 -->
+        <section class="dept-section dept-section--alt" id="accessories" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--accessories">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon"><i class="fa-solid fa-plug"></i></div>
+                        <div>
+                            <span class="dept-block-label">第08部门</span>
+                            <h2 class="dept-block-title">技术配件部</h2>
+                            <p class="dept-block-sub">完善您技术配置所需的一切</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>配件部提供各种补充您设备并提高生产力的技术外围设备和配件。</p>
+                            <p>从鼠标和键盘到扬声器、电缆、适配器、存储设备以及您需要的所有配件。</p>
+                        </div>
+                        <div class="dept-tags-wrap">
+                            <span class="dept-tag"><i class="fa-solid fa-computer-mouse"></i> 鼠标</span>
+                            <span class="dept-tag"><i class="fa-solid fa-keyboard"></i> 键盘</span>
+                            <span class="dept-tag"><i class="fa-solid fa-headphones"></i> 音响</span>
+                            <span class="dept-tag"><i class="fa-solid fa-plug"></i> 数据线</span>
+                            <span class="dept-tag"><i class="fa-solid fa-hard-drive"></i> 存储</span>
+                            <span class="dept-tag"><i class="fa-solid fa-wifi"></i> 网络</span>
+                            <span class="dept-tag"><i class="fa-solid fa-battery-full"></i> 电源</span>
+                            <span class="dept-tag"><i class="fa-solid fa-print"></i> 打印机</span>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index-zh.html#contact" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 咨询配件</a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. 编程 -->
+        <section class="dept-section" id="programming" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--programming">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon"><i class="fa-solid fa-code"></i></div>
+                        <div>
+                            <span class="dept-block-label">第09部门</span>
+                            <h2 class="dept-block-title">编程与媒体采购部</h2>
+                            <p class="dept-block-sub">一体化数字和营销解决方案</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>编程与媒体采购部专注于为企业和机构提供数字和营销解决方案——从网站和应用程序开发到管理数字广告和营销活动。</p>
+                            <p>我们的专业团队将技术专长与数字创造力相结合，提供符合您业务目标并实现切实成果的解决方案。</p>
+                        </div>
+                        <div class="dept-services-grid">
+                            <div class="dept-service-card"><i class="fa-solid fa-globe"></i><h4>网站开发</h4><p>采用现代技术的专业网站</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-mobile-screen"></i><h4>应用开发</h4><p>iOS和Android移动应用</p></div>
+                            <div class="dept-service-card"><i class="fa-brands fa-facebook"></i><h4>社交媒体管理</h4><p>社交平台上的内容和广告</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-bullhorn"></i><h4>媒体采购</h4><p>付费广告活动管理</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-magnifying-glass-chart"></i><h4>SEO优化</h4><p>提高网站在搜索引擎中的排名</p></div>
+                            <div class="dept-service-card"><i class="fa-solid fa-pen-nib"></i><h4>品牌标识</h4><p>专业标志和视觉识别</p></div>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index-zh.html#contact" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 联系编程部</a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="YAS_Logo_Final.svg" alt="YAS" class="footer-logo-img" />
+                    <p>技术解决方案。设备。支持与维护。</p>
+                    <p class="footer-tagline">您的技术伙伴，满足每一种需求。</p>
+                </div>
+                <nav class="footer-nav" aria-label="导航链接">
+                    <h4>链接</h4>
+                    <ul>
+                        <li><a href="index-zh.html#home">首页</a></li>
+                        <li><a href="index-zh.html#about">关于我们</a></li>
+                        <li><a href="index-zh.html#solutions">解决方案</a></li>
+                        <li><a href="index-zh.html#products">产品</a></li>
+                        <li><a href="index-zh.html#maintenance">维护</a></li>
+                        <li><a href="index-zh.html#faq">常见问题</a></li>
+                        <li><a href="index-zh.html#contact">联系我们</a></li>
+                        <li><a href="https://www.yas-eg.com" target="_blank" rel="noopener noreferrer">🛒 在线商店</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-contact">
+                    <h4>联系方式</h4>
+                    <a href="tel:+201550526397" dir="ltr">+20 15 50526397</a>
+                    <a href="tel:+201111149333" dir="ltr">+20 11 11149333</a>
+                    <a href="https://wa.me/201550526397" target="_blank" rel="noopener noreferrer" dir="ltr"><i class="fa-brands fa-whatsapp"></i> +20 15 50526397</a>
+                    <a href="mailto:info@yascity.com">info@yascity.com</a>
+                    <a href="https://www.facebook.com/yasegpt" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i> YAS Tech Egypt</a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>© 2026 YAS — 版权所有</p></div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+    <script src="assets/js/script-zh.js"></script>
+</body>
+</html>

@@ -1,0 +1,661 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YAS | الأقسام</title>
+    <meta name="description" content="تعرف على أقسام YAS — الصيانة، اللابتوبات، الشاشات، الكاشير، PC، البروجيكتور، المبيعات، الإكسسوارات، البرمجة وميديا باير." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/departments.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="YAS_Logo_Final.svg" />
+    <link rel="stylesheet" href="assets/css/mobile.css" />
+</head>
+
+<body class="dept-page">
+
+    <!-- ==================== ANNOUNCEMENT BAR ==================== -->
+    <div class="announcement-bar" id="announcementBar" role="banner">
+        <div class="announcement-inner">
+            <span class="ann-badge">
+                <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+                وكيل رسمي معتمد
+            </span>
+            <p class="ann-text">
+                <strong>YAS</strong> — الوكيل الرسمي المعتمد لشاشات
+                <strong class="ann-hik">Hikvision</strong> في مصر
+            </p>
+            <span class="ann-badge ann-badge--outline">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                Authorized Distributor
+            </span>
+        </div>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <nav class="nav-inner">
+                <a href="index.html" class="nav-logo" aria-label="YAS الرئيسية">
+                    <img src="YAS_Logo_Final.svg" alt="YAS" class="logo-img" />
+                </a>
+
+                <ul class="nav-menu" id="navMenu" role="menubar">
+                    <li role="none"><a href="index.html#home"        class="nav-link" role="menuitem">الرئيسية</a></li>
+                    <li role="none"><a href="index.html#about"       class="nav-link" role="menuitem">من نحن</a></li>
+                    <li role="none"><a href="index.html#solutions"   class="nav-link" role="menuitem">حلولنا</a></li>
+                    <li role="none"><a href="index.html#products"    class="nav-link" role="menuitem">منتجاتنا</a></li>
+
+                    <!-- Departments Dropdown -->
+                    <li class="nav-dropdown-wrap" role="none">
+                        <button class="nav-link nav-dropdown-btn active" aria-haspopup="true" aria-expanded="false" aria-controls="deptMenu">
+                            الأقسام <i class="fa-solid fa-chevron-down nav-dropdown-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="nav-dropdown-menu" id="deptMenu" role="menu">
+                            <li role="none"><a href="departments.html#maintenance" class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span><span class="dept-info"><span class="dept-name">قسم الصيانة</span><span class="dept-desc">صيانة ودعم فني للأجهزة</span></span></a></li>
+                            <li role="none"><a href="departments.html#laptops"     class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-laptop"></i></span><span class="dept-info"><span class="dept-name">قسم اللابتوبات</span><span class="dept-desc">لابتوبات لكل احتياج</span></span></a></li>
+                            <li role="none"><a href="departments.html#screens"     class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-tv"></i></span><span class="dept-info"><span class="dept-name">قسم الشاشات</span><span class="dept-desc">شاشات تفاعلية وعرض</span></span></a></li>
+                            <li role="none"><a href="departments.html#cashier"     class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-cash-register"></i></span><span class="dept-info"><span class="dept-name">قسم الكاشير</span><span class="dept-desc">أجهزة POS ونقاط البيع</span></span></a></li>
+                            <li role="none"><a href="departments.html#pc"          class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-desktop"></i></span><span class="dept-info"><span class="dept-name">قسم الـ PC</span><span class="dept-desc">أجهزة كمبيوتر للمؤسسات</span></span></a></li>
+                            <li role="none"><a href="departments.html#projectors"  class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-video"></i></span><span class="dept-info"><span class="dept-name">قسم البروجيكتور</span><span class="dept-desc">أجهزة عرض وبروجيكتور</span></span></a></li>
+                            <li role="none"><a href="departments.html#sales"       class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-chart-line"></i></span><span class="dept-info"><span class="dept-name">قسم المبيعات</span><span class="dept-desc">فريق المبيعات والتوريد</span></span></a></li>
+                            <li role="none"><a href="departments.html#accessories" class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-plug"></i></span><span class="dept-info"><span class="dept-name">قسم الإكسسوارات</span><span class="dept-desc">ملحقات وأجهزة طرفية</span></span></a></li>
+                            <li role="none"><a href="departments.html#programming" class="nav-dropdown-item" role="menuitem"><span class="dept-icon"><i class="fa-solid fa-code"></i></span><span class="dept-info"><span class="dept-name">قسم البرمجة وميديا باير</span><span class="dept-desc">برمجة وحلول رقمية</span></span></a></li>
+                        </ul>
+                    </li>
+
+                    <li role="none"><a href="index.html#maintenance" class="nav-link" role="menuitem">الصيانة</a></li>
+                    <li role="none"><a href="index.html#faq"         class="nav-link" role="menuitem">الأسئلة الشائعة</a></li>
+                    <li role="none"><a href="index.html#contact"     class="nav-link" role="menuitem">تواصل معنا</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <div class="lang-picker" id="langPicker">
+                        <button class="lang-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="اختر اللغة">
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                            <span class="lang-current">AR</span>
+                            <i class="fa-solid fa-chevron-down lang-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="lang-dropdown" role="listbox" aria-label="اختر اللغة">
+                            <li role="option" aria-selected="true"  class="lang-opt lang-opt--active"><a href="departments.html">🇪🇬 العربية</a></li>
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="departments-en.html">🇬🇧 English</a></li>
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="departments-de.html">🇩🇪 Deutsch</a></li>
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="departments-zh.html">🇨🇳 中文</a></li>
+                        </ul>
+                    </div>
+                    <a href="index.html#contact" class="btn btn-primary btn-sm">تواصل معنا</a>
+                    <button class="burger" id="burgerBtn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navMenu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ==================== PAGE HERO ==================== -->
+        <section class="dept-hero">
+            <div class="dept-hero-bg" aria-hidden="true"></div>
+            <div class="container">
+                <div class="dept-hero-inner" data-reveal="fade-up">
+                    <div class="dept-hero-breadcrumb">
+                        <a href="index.html">الرئيسية</a>
+                        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                        <span>الأقسام</span>
+                    </div>
+                    <h1 class="dept-hero-title">أقسام <span class="text-accent">YAS</span></h1>
+                    <p class="dept-hero-desc">كل قسم متخصص في مجاله — فريق محترف جاهز لخدمتك</p>
+
+                    <!-- Quick nav pills -->
+                    <div class="dept-pills" role="navigation" aria-label="التنقل بين الأقسام">
+                        <a href="#maintenance" class="dept-pill"><i class="fa-solid fa-screwdriver-wrench"></i> الصيانة</a>
+                        <a href="#laptops"     class="dept-pill"><i class="fa-solid fa-laptop"></i> اللابتوبات</a>
+                        <a href="#screens"     class="dept-pill"><i class="fa-solid fa-tv"></i> الشاشات</a>
+                        <a href="#cashier"     class="dept-pill"><i class="fa-solid fa-cash-register"></i> الكاشير</a>
+                        <a href="#pc"          class="dept-pill"><i class="fa-solid fa-desktop"></i> PC</a>
+                        <a href="#projectors"  class="dept-pill"><i class="fa-solid fa-video"></i> البروجيكتور</a>
+                        <a href="#sales"       class="dept-pill"><i class="fa-solid fa-chart-line"></i> المبيعات</a>
+                        <a href="#accessories" class="dept-pill"><i class="fa-solid fa-plug"></i> الإكسسوارات</a>
+                        <a href="#programming" class="dept-pill"><i class="fa-solid fa-code"></i> البرمجة</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 1. MAINTENANCE ==================== -->
+        <section class="dept-section" id="maintenance" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--maintenance">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <div>
+                            <span class="dept-block-label">القسم الأول</span>
+                            <h2 class="dept-block-title">قسم الصيانة</h2>
+                            <p class="dept-block-sub">نحافظ على أجهزتك تعمل بكفاءة دائماً</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>يتخصص قسم الصيانة في YAS في تشخيص وإصلاح الأجهزة الإلكترونية والتقنية بكل أنواعها. نقدم خدمات شاملة تبدأ من الفحص الأولي وتشخيص الأعطال وحتى الإصلاح الكامل واستبدال المكونات.</p>
+                            <p>فريقنا الفني المتخصص يضمن لك سرعة في التشخيص ودقة في الإصلاح، مع الحفاظ على جودة الأجهزة وإطالة عمرها الافتراضي.</p>
+                        </div>
+                        <div class="dept-services-grid">
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-stethoscope"></i>
+                                <h4>تشخيص الأعطال</h4>
+                                <p>فحص دقيق لتحديد المشكلة وسببها</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-laptop"></i>
+                                <h4>صيانة اللابتوبات</h4>
+                                <p>إصلاح شاشات، بطاريات، لوحات مفاتيح وأكثر</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-desktop"></i>
+                                <h4>صيانة أجهزة PC</h4>
+                                <p>تنظيف، تبديل مكونات، ترقية الأداء</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-tv"></i>
+                                <h4>صيانة الشاشات</h4>
+                                <p>إصلاح الشاشات التفاعلية وشاشات العرض</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-microchip"></i>
+                                <h4>استبدال المكونات</h4>
+                                <p>قطع غيار أصلية وضمان على الإصلاح</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-headset"></i>
+                                <h4>الدعم الفني</h4>
+                                <p>متابعة ما بعد الإصلاح ودعم مستمر</p>
+                            </div>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index.html#contact" class="btn btn-primary">
+                                <i class="fa-solid fa-phone"></i> تواصل مع قسم الصيانة
+                            </a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i> واتساب
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 2. LAPTOPS ==================== -->
+        <section class="dept-section dept-section--alt" id="laptops" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--laptops">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon">
+                            <i class="fa-solid fa-laptop"></i>
+                        </div>
+                        <div>
+                            <span class="dept-block-label">القسم الثاني</span>
+                            <h2 class="dept-block-title">قسم اللابتوبات</h2>
+                            <p class="dept-block-sub">لابتوب مناسب لكل احتياج وكل ميزانية</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>يوفر قسم اللابتوبات في YAS مجموعة متنوعة من اللابتوبات تناسب مختلف الاحتياجات — من لابتوبات الدراسة والاستخدام اليومي، وحتى أجهزة الأعمال والاستخدام الاحترافي.</p>
+                            <p>نتعامل مع أكبر الماركات العالمية مثل Apple وDell وHP وLenovo وAcer وAsus، ونوفر خيارات بمواصفات ومدى سعري متنوع ليناسب الجميع.</p>
+                        </div>
+                        <div class="dept-tags-wrap">
+                            <span class="dept-tag"><i class="fa-solid fa-graduation-cap"></i> للدراسة</span>
+                            <span class="dept-tag"><i class="fa-solid fa-briefcase"></i> للأعمال</span>
+                            <span class="dept-tag"><i class="fa-solid fa-code"></i> للبرمجة</span>
+                            <span class="dept-tag"><i class="fa-solid fa-palette"></i> للتصميم</span>
+                            <span class="dept-tag"><i class="fa-solid fa-gamepad"></i> للألعاب</span>
+                            <span class="dept-tag"><i class="fa-solid fa-user"></i> للاستخدام اليومي</span>
+                            <span class="dept-tag"><i class="fa-solid fa-building"></i> للمؤسسات</span>
+                        </div>
+                        <div class="dept-brands">
+                            <span>Apple</span><span>Dell</span><span>HP</span>
+                            <span>Lenovo</span><span>Asus</span><span>Acer</span><span>Microsoft</span>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index.html#contact" class="btn btn-primary">
+                                <i class="fa-solid fa-phone"></i> استفسر عن اللابتوبات
+                            </a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i> واتساب
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3. SCREENS ==================== -->
+        <section class="dept-section" id="screens" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--screens">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon">
+                            <i class="fa-solid fa-tv"></i>
+                        </div>
+                        <div>
+                            <span class="dept-block-label">القسم الثالث</span>
+                            <h2 class="dept-block-title">قسم الشاشات التفاعلية</h2>
+                            <p class="dept-block-sub">حلول العرض التفاعلي للتعليم والأعمال</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>يختص قسم الشاشات التفاعلية بتوفير أحدث تقنيات العرض التفاعلي المناسبة للفصول الدراسية وقاعات الاجتماعات وأماكن التدريب والمؤتمرات.</p>
+                            <p>نوفر شاشات تفاعلية بأحجام متعددة من ماركات عالمية موثوقة، مع إمكانية التركيب والتوصيل والدعم الفني بعد البيع.</p>
+                        </div>
+                        <div class="dept-services-grid">
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <h4>للتعليم</h4>
+                                <p>فصول دراسية وقاعات محاضرات</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <h4>للأعمال</h4>
+                                <p>قاعات اجتماعات وعروض تقديمية</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                                <h4>للتدريب</h4>
+                                <p>مراكز تدريب ومؤسسات متخصصة</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-wrench"></i>
+                                <h4>تركيب ودعم</h4>
+                                <p>تركيب احترافي ودعم فني مستمر</p>
+                            </div>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index.html#contact" class="btn btn-primary">
+                                <i class="fa-solid fa-phone"></i> استفسر عن الشاشات
+                            </a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i> واتساب
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 4. CASHIER ==================== -->
+        <section class="dept-section dept-section--alt" id="cashier" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--cashier">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon">
+                            <i class="fa-solid fa-cash-register"></i>
+                        </div>
+                        <div>
+                            <span class="dept-block-label">القسم الرابع</span>
+                            <h2 class="dept-block-title">قسم الكاشير وأنظمة POS</h2>
+                            <p class="dept-block-sub">حلول نقاط البيع لكل نشاط تجاري</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>يوفر قسم الكاشير في YAS حلول نقاط البيع المتكاملة المناسبة للمحلات التجارية والمطاعم والصيدليات والشركات بمختلف أحجامها.</p>
+                            <p>نوفر أجهزة كاشير بمواصفات متعددة تناسب طبيعة نشاطك التجاري، مع خدمة التوصيل والإعداد والدعم الفني.</p>
+                        </div>
+                        <div class="dept-tags-wrap">
+                            <span class="dept-tag"><i class="fa-solid fa-store"></i> المحلات التجارية</span>
+                            <span class="dept-tag"><i class="fa-solid fa-utensils"></i> المطاعم</span>
+                            <span class="dept-tag"><i class="fa-solid fa-pills"></i> الصيدليات</span>
+                            <span class="dept-tag"><i class="fa-solid fa-building"></i> الشركات</span>
+                            <span class="dept-tag"><i class="fa-solid fa-cart-shopping"></i> السوبرماركت</span>
+                            <span class="dept-tag"><i class="fa-solid fa-scissors"></i> الخدمات</span>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index.html#contact" class="btn btn-primary">
+                                <i class="fa-solid fa-phone"></i> استفسر عن أجهزة الكاشير
+                            </a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i> واتساب
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 5. PC ==================== -->
+        <section class="dept-section" id="pc" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--pc">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon">
+                            <i class="fa-solid fa-desktop"></i>
+                        </div>
+                        <div>
+                            <span class="dept-block-label">القسم الخامس</span>
+                            <h2 class="dept-block-title">قسم أجهزة PC</h2>
+                            <p class="dept-block-sub">أجهزة كمبيوتر مكتبي للمؤسسات والشركات</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>يتخصص قسم أجهزة PC في توفير الحلول المناسبة لبيئات العمل المكتبي والمؤسسي والتعليمي. نوفر أجهزة بمواصفات متنوعة تناسب كل نوع استخدام وميزانية.</p>
+                            <p>سواء كنت تحتاج إلى جهاز واحد أو تجهيز مكتب كامل أو مختبر كمبيوتر لمؤسسة تعليمية، نوفر الحل المناسب مع الدعم والصيانة.</p>
+                        </div>
+                        <div class="dept-services-grid">
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-building-columns"></i>
+                                <h4>المؤسسات التعليمية</h4>
+                                <p>مختبرات ومعامل كمبيوتر متكاملة</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <h4>بيئات العمل</h4>
+                                <p>أجهزة مكتبية للشركات والمؤسسات</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-cash-register"></i>
+                                <h4>نقاط البيع</h4>
+                                <p>PC مخصص لأنظمة الكاشير والـ POS</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                <h4>الترقية والتطوير</h4>
+                                <p>ترقية المكونات لتحسين الأداء</p>
+                            </div>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index.html#contact" class="btn btn-primary">
+                                <i class="fa-solid fa-phone"></i> استفسر عن أجهزة PC
+                            </a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i> واتساب
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 6. PROJECTORS ==================== -->
+        <section class="dept-section dept-section--alt" id="projectors" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--projectors">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <div>
+                            <span class="dept-block-label">القسم السادس</span>
+                            <h2 class="dept-block-title">قسم أجهزة البروجيكتور</h2>
+                            <p class="dept-block-sub">أجهزة عرض احترافية لكل مكان</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>يوفر قسم البروجيكتور في YAS مجموعة متنوعة من أجهزة العرض المناسبة للفصول الدراسية وقاعات الاجتماعات وأماكن التدريب والعروض التجارية.</p>
+                            <p>نتعامل مع ماركات موثوقة مثل Epson وViewSonic وغيرها، ونوفر المواصفات المناسبة لحجم المكان وطبيعة الاستخدام.</p>
+                        </div>
+                        <div class="dept-tags-wrap">
+                            <span class="dept-tag"><i class="fa-solid fa-school"></i> الفصول الدراسية</span>
+                            <span class="dept-tag"><i class="fa-solid fa-people-group"></i> قاعات الاجتماعات</span>
+                            <span class="dept-tag"><i class="fa-solid fa-chalkboard-user"></i> التدريب</span>
+                            <span class="dept-tag"><i class="fa-solid fa-film"></i> العروض</span>
+                            <span class="dept-tag"><i class="fa-solid fa-mosque"></i> قاعات المناسبات</span>
+                        </div>
+                        <div class="dept-brands">
+                            <span>Epson</span><span>ViewSonic</span><span>BenQ</span><span>Optoma</span>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index.html#contact" class="btn btn-primary">
+                                <i class="fa-solid fa-phone"></i> استفسر عن البروجيكتور
+                            </a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i> واتساب
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 7. SALES ==================== -->
+        <section class="dept-section" id="sales" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--sales">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <span class="dept-block-label">القسم السابع</span>
+                            <h2 class="dept-block-title">قسم المبيعات</h2>
+                            <p class="dept-block-sub">فريق متخصص في التوريد والبيع لكل القطاعات</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>يتولى قسم المبيعات في YAS استقبال طلبات العملاء وتحديد احتياجاتهم التقنية واقتراح الحلول المناسبة وتنفيذ عمليات التوريد في أسرع وقت ممكن.</p>
+                            <p>نخدم الأفراد والشركات والمؤسسات التعليمية والجهات الحكومية، ونوفر عروض أسعار مناسبة وخيارات مرنة للدفع والتوريد.</p>
+                        </div>
+                        <div class="dept-services-grid">
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <h4>تحديد الاحتياجات</h4>
+                                <p>نفهم احتياجك ونرشح الحل الأنسب</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                                <h4>عروض الأسعار</h4>
+                                <p>أسعار تنافسية وعروض مخصصة</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-truck-fast"></i>
+                                <h4>توريد سريع</h4>
+                                <p>توصيل لكل محافظات مصر</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-handshake"></i>
+                                <h4>عقود التوريد</h4>
+                                <p>عقود دورية للمؤسسات والجهات الكبيرة</p>
+                            </div>
+                        </div>
+                        <div class="dept-contact-info">
+                            <div class="dept-contact-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <span>هاتف المبيعات</span>
+                                    <a href="tel:+201111149333" dir="ltr">+20 11 11149333</a>
+                                </div>
+                            </div>
+                            <div class="dept-contact-item">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <div>
+                                    <span>واتساب</span>
+                                    <a href="https://wa.me/201550526397" target="_blank" rel="noopener noreferrer" dir="ltr">+20 15 50526397</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index.html#contact" class="btn btn-primary">
+                                <i class="fa-solid fa-phone"></i> تواصل مع المبيعات
+                            </a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i> واتساب
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 8. ACCESSORIES ==================== -->
+        <section class="dept-section dept-section--alt" id="accessories" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--accessories">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon">
+                            <i class="fa-solid fa-plug"></i>
+                        </div>
+                        <div>
+                            <span class="dept-block-label">القسم الثامن</span>
+                            <h2 class="dept-block-title">قسم الإكسسوارات التقنية</h2>
+                            <p class="dept-block-sub">كل ما تحتاجه لإكمال منظومتك التقنية</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>يوفر قسم الإكسسوارات في YAS مجموعة واسعة من الملحقات التقنية والأجهزة الطرفية التي تكمل منظومة أجهزتك وتزيد من إنتاجيتها.</p>
+                            <p>من الماوس ولوحة المفاتيح والسماعات وحتى الكابلات والمحولات ووحدات التخزين وكل الملحقات التي تحتاجها.</p>
+                        </div>
+                        <div class="dept-tags-wrap">
+                            <span class="dept-tag"><i class="fa-solid fa-computer-mouse"></i> الماوس</span>
+                            <span class="dept-tag"><i class="fa-solid fa-keyboard"></i> لوحات المفاتيح</span>
+                            <span class="dept-tag"><i class="fa-solid fa-headphones"></i> السماعات</span>
+                            <span class="dept-tag"><i class="fa-solid fa-plug"></i> الكابلات</span>
+                            <span class="dept-tag"><i class="fa-solid fa-hard-drive"></i> وحدات التخزين</span>
+                            <span class="dept-tag"><i class="fa-solid fa-wifi"></i> الشبكات</span>
+                            <span class="dept-tag"><i class="fa-solid fa-battery-full"></i> الطاقة</span>
+                            <span class="dept-tag"><i class="fa-solid fa-print"></i> الطابعات</span>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index.html#contact" class="btn btn-primary">
+                                <i class="fa-solid fa-phone"></i> استفسر عن الإكسسوارات
+                            </a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i> واتساب
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 9. PROGRAMMING & MEDIA ==================== -->
+        <section class="dept-section" id="programming" data-reveal="fade-up">
+            <div class="container">
+                <div class="dept-block dept-block--programming">
+                    <div class="dept-block-header">
+                        <div class="dept-block-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div>
+                            <span class="dept-block-label">القسم التاسع</span>
+                            <h2 class="dept-block-title">قسم البرمجة وميديا باير</h2>
+                            <p class="dept-block-sub">حلول رقمية وتسويقية متكاملة</p>
+                        </div>
+                    </div>
+                    <div class="dept-block-body">
+                        <div class="dept-block-text">
+                            <p>يختص قسم البرمجة وميديا باير في YAS بتقديم الحلول الرقمية والتسويقية للشركات والمؤسسات، بدءاً من تطوير المواقع والتطبيقات وحتى إدارة الإعلانات الرقمية وحملات التسويق.</p>
+                            <p>فريقنا المتخصص يجمع بين الخبرة التقنية والإبداع الرقمي لتقديم حلول تناسب أهداف عملك وتحقق نتائج ملموسة.</p>
+                        </div>
+                        <div class="dept-services-grid">
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-globe"></i>
+                                <h4>تطوير المواقع</h4>
+                                <p>مواقع احترافية بتقنيات حديثة</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <h4>تطوير التطبيقات</h4>
+                                <p>تطبيقات موبايل iOS وAndroid</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-brands fa-facebook"></i>
+                                <h4>إدارة السوشيال ميديا</h4>
+                                <p>محتوى وإعلانات على منصات التواصل</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-bullhorn"></i>
+                                <h4>ميديا باير</h4>
+                                <p>إدارة حملات إعلانية مدفوعة</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                <h4>SEO وتحسين الظهور</h4>
+                                <p>تحسين ترتيب موقعك في محركات البحث</p>
+                            </div>
+                            <div class="dept-service-card">
+                                <i class="fa-solid fa-pen-nib"></i>
+                                <h4>تصميم الهوية</h4>
+                                <p>شعارات وهوية بصرية احترافية</p>
+                            </div>
+                        </div>
+                        <div class="dept-cta">
+                            <a href="index.html#contact" class="btn btn-primary">
+                                <i class="fa-solid fa-phone"></i> تواصل مع قسم البرمجة
+                            </a>
+                            <a href="https://wa.me/201550526397" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i> واتساب
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="YAS_Logo_Final.svg" alt="YAS" class="footer-logo-img" />
+                    <p>حلول تقنية. أجهزة. دعم وصيانة.</p>
+                    <p class="footer-tagline">شريك تقني لاحتياجاتك.</p>
+                </div>
+                <nav class="footer-nav" aria-label="روابط التنقل">
+                    <h4>الروابط</h4>
+                    <ul>
+                        <li><a href="index.html#home">الرئيسية</a></li>
+                        <li><a href="index.html#about">من نحن</a></li>
+                        <li><a href="index.html#solutions">حلولنا</a></li>
+                        <li><a href="index.html#products">منتجاتنا</a></li>
+                        <li><a href="index.html#maintenance">الصيانة</a></li>
+                        <li><a href="index.html#faq">الأسئلة الشائعة</a></li>
+                        <li><a href="index.html#contact">تواصل معنا</a></li>
+                        <li><a href="https://www.yas-eg.com" target="_blank" rel="noopener noreferrer">🛒 المتجر الإلكتروني</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-contact">
+                    <h4>تواصل</h4>
+                    <a href="tel:+201550526397" dir="ltr">+20 15 50526397</a>
+                    <a href="tel:+201111149333" dir="ltr">+20 11 11149333</a>
+                    <a href="https://wa.me/201550526397" target="_blank" rel="noopener noreferrer" dir="ltr">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> +20 15 50526397
+                    </a>
+                    <a href="mailto:info@yascity.com">info@yascity.com</a>
+                    <a href="https://www.facebook.com/yasegpt" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i> YAS Tech Egypt
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 YAS — جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى" title="العودة للأعلى">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
