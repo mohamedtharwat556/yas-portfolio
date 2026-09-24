@@ -1165,18 +1165,19 @@ function initPdfDownload() {
 
         // Configure html2pdf options
         const opt = {
-            margin:       10,
+            margin:       [5, 5, 5, 5], // top, left, bottom, right in mm
             filename:     filename,
-            image:        { type: 'jpeg', quality: 0.98 },
+            image:        { type: 'jpeg', quality: 0.92 },
             html2canvas:  {
-                scale: 2,
+                scale: 1.5,
                 useCORS: true,
                 ignoreElements: (element) => {
                     // Ignore video elements
                     return element.tagName === 'VIDEO' ||
                            element.tagName === 'IFRAME' ||
                            element.classList.contains('preloader') ||
-                           element.classList.contains('nav-overlay');
+                           element.classList.contains('nav-overlay') ||
+                           element.classList.contains('back-to-top');
                 },
                 onclone: (clonedDoc) => {
                     // Remove all video elements from cloned document
@@ -1185,13 +1186,22 @@ function initPdfDownload() {
                     // Remove preloader
                     const preloader = clonedDoc.querySelector('.preloader');
                     if (preloader) preloader.remove();
+                    // Remove back to top button
+                    const backToTop = clonedDoc.querySelector('.back-to-top');
+                    if (backToTop) backToTop.remove();
+                    // Remove navbar
+                    const navbar = clonedDoc.querySelector('#navbar');
+                    if (navbar) navbar.remove();
+                    // Remove announcement bar
+                    const annBar = clonedDoc.querySelector('#announcementBar');
+                    if (annBar) annBar.remove();
                 }
             },
             jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
 
-        // Select the main content to convert
-        const element = document.body;
+        // Select the main content to convert (exclude footer and other unwanted elements)
+        const element = document.querySelector('main');
 
         // Generate PDF
         const btnText = downloadBtn.innerHTML;

@@ -411,29 +411,36 @@ function initPdfDownload() {
         const filename = `YAS-Portfolio-${lang}.pdf`;
 
         const opt = {
-            margin:       10,
+            margin:       [5, 5, 5, 5],
             filename:     filename,
-            image:        { type: 'jpeg', quality: 0.98 },
+            image:        { type: 'jpeg', quality: 0.92 },
             html2canvas:  {
-                scale: 2,
+                scale: 1.5,
                 useCORS: true,
                 ignoreElements: (element) => {
                     return element.tagName === 'VIDEO' ||
                            element.tagName === 'IFRAME' ||
                            element.classList.contains('preloader') ||
-                           element.classList.contains('nav-overlay');
+                           element.classList.contains('nav-overlay') ||
+                           element.classList.contains('back-to-top');
                 },
                 onclone: (clonedDoc) => {
                     const videos = clonedDoc.querySelectorAll('video');
                     videos.forEach(video => video.remove());
                     const preloader = clonedDoc.querySelector('.preloader');
                     if (preloader) preloader.remove();
+                    const backToTop = clonedDoc.querySelector('.back-to-top');
+                    if (backToTop) backToTop.remove();
+                    const navbar = clonedDoc.querySelector('#navbar');
+                    if (navbar) navbar.remove();
+                    const annBar = clonedDoc.querySelector('#announcementBar');
+                    if (annBar) annBar.remove();
                 }
             },
             jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
 
-        const element = document.body;
+        const element = document.querySelector('main');
 
         const btnText = downloadBtn.innerHTML;
         downloadBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Generating...';
