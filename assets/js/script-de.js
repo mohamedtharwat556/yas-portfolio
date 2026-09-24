@@ -106,8 +106,8 @@ const DeptDropdown = (() => {
 })();
 
 const App = { modules: [Navbar, ScrollReveal, BackToTop, ProductTabs, HeroRotatingText, SectionProgress, DeptDropdown], init() { this.modules.forEach(m => { try { m.init(); } catch(e) {} }); } };
-if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => App.init());
-else App.init();
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => { App.init(); initPdfDownload(); });
+else { App.init(); initPdfDownload(); }
 
 (function initLangPicker() {
     const picker = document.getElementById('langPicker');
@@ -117,3 +117,20 @@ else App.init();
     document.addEventListener('click', () => { picker.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { picker.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
 })();
+
+/* PDF Download Function */
+function initPdfDownload() {
+    const downloadBtn = document.getElementById('downloadPdfBtn');
+    if (!downloadBtn) return;
+    downloadBtn.addEventListener('click', () => {
+        const html = document.documentElement;
+        const lang = html.getAttribute('lang') || 'de';
+        const filename = `YAS-Portfolio-${lang}.pdf`;
+        const opt = { margin: 10, filename: filename, image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } };
+        const element = document.body;
+        const btnText = downloadBtn.innerHTML;
+        downloadBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Generiere...';
+        downloadBtn.disabled = true;
+        html2pdf().set(opt).from(element).save().then(() => { downloadBtn.innerHTML = btnText; downloadBtn.disabled = false; }).catch(err => { console.error('PDF generation failed:', err); downloadBtn.innerHTML = btnText; downloadBtn.disabled = false; alert('Fehler beim Generieren der PDF. Bitte versuchen Sie es erneut.'); });
+    });
+}

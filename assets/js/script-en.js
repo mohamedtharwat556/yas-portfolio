@@ -380,9 +380,13 @@ const App = {
 };
 
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => App.init());
+    document.addEventListener('DOMContentLoaded', () => {
+        App.init();
+        initPdfDownload();
+    });
 } else {
     App.init();
+    initPdfDownload();
 }
 
 (function initLangPicker() {
@@ -392,4 +396,43 @@ if (document.readyState === 'loading') {
     btn.addEventListener('click', (e) => { e.stopPropagation(); picker.classList.toggle('open'); btn.setAttribute('aria-expanded', picker.classList.contains('open')); });
     document.addEventListener('click', () => { picker.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { picker.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+})();
+
+/* ============================================================
+   PDF DOWNLOAD FUNCTION
+   ============================================================ */
+function initPdfDownload() {
+    const downloadBtn = document.getElementById('downloadPdfBtn');
+    if (!downloadBtn) return;
+
+    downloadBtn.addEventListener('click', () => {
+        const html = document.documentElement;
+        const lang = html.getAttribute('lang') || 'en';
+        const filename = `YAS-Portfolio-${lang}.pdf`;
+
+        const opt = {
+            margin:       10,
+            filename:     filename,
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2, useCORS: true },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        const element = document.body;
+
+        const btnText = downloadBtn.innerHTML;
+        downloadBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Generating...';
+        downloadBtn.disabled = true;
+
+        html2pdf().set(opt).from(element).save().then(() => {
+            downloadBtn.innerHTML = btnText;
+            downloadBtn.disabled = false;
+        }).catch(err => {
+            console.error('PDF generation failed:', err);
+            downloadBtn.innerHTML = btnText;
+            downloadBtn.disabled = false;
+            alert('An error occurred while generating the PDF. Please try again.');
+        });
+    });
+}
 })();

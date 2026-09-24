@@ -1112,10 +1112,12 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         App.init();
         initLangPicker();
+        initPdfDownload();
     });
 } else {
     App.init();
     initLangPicker();
+    initPdfDownload();
 }
 
 /* ============================================================
@@ -1145,5 +1147,47 @@ function initLangPicker() {
             picker.classList.remove('open');
             btn.setAttribute('aria-expanded', 'false');
         }
+    });
+}
+
+/* ============================================================
+   PDF DOWNLOAD FUNCTION
+   ============================================================ */
+function initPdfDownload() {
+    const downloadBtn = document.getElementById('downloadPdfBtn');
+    if (!downloadBtn) return;
+
+    downloadBtn.addEventListener('click', () => {
+        // Get the page language for filename
+        const html = document.documentElement;
+        const lang = html.getAttribute('lang') || 'ar';
+        const filename = `YAS-Portfolio-${lang}.pdf`;
+
+        // Configure html2pdf options
+        const opt = {
+            margin:       10,
+            filename:     filename,
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2, useCORS: true },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        // Select the main content to convert
+        const element = document.body;
+
+        // Generate PDF
+        const btnText = downloadBtn.innerHTML;
+        downloadBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> جاري التوليد...';
+        downloadBtn.disabled = true;
+
+        html2pdf().set(opt).from(element).save().then(() => {
+            downloadBtn.innerHTML = btnText;
+            downloadBtn.disabled = false;
+        }).catch(err => {
+            console.error('PDF generation failed:', err);
+            downloadBtn.innerHTML = btnText;
+            downloadBtn.disabled = false;
+            alert('حدث خطأ أثناء إنشاء ملف PDF. يرجى المحاولة مرة أخرى.');
+        });
     });
 }
