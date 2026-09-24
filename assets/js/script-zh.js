@@ -127,12 +127,14 @@ function initPdfDownload() {
         const lang = html.getAttribute('lang') || 'zh';
         const filename = `YAS-Portfolio-${lang}.pdf`;
         const opt = {
-            margin: [5, 5, 5, 5],
+            margin: [15, 15, 15, 15],
             filename: filename,
-            image: { type: 'jpeg', quality: 0.92 },
+            image: { type: 'jpeg', quality: 0.95 },
             html2canvas: {
-                scale: 1.5,
+                scale: 2,
                 useCORS: true,
+                scrollY: 0,
+                scrollX: 0,
                 ignoreElements: (element) => {
                     return element.tagName === 'VIDEO' ||
                            element.tagName === 'IFRAME' ||
@@ -141,6 +143,16 @@ function initPdfDownload() {
                            element.classList.contains('back-to-top');
                 },
                 onclone: (clonedDoc) => {
+                    const style = clonedDoc.createElement('style');
+                    style.textContent = `
+                        * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+                        .section { page-break-inside: avoid; }
+                        .tab-panel { page-break-inside: avoid; }
+                        .product-showcase { page-break-inside: avoid; }
+                        .solution-block { page-break-inside: avoid; }
+                        .card { page-break-inside: avoid; }
+                    `;
+                    clonedDoc.head.appendChild(style);
                     const videos = clonedDoc.querySelectorAll('video');
                     videos.forEach(video => video.remove());
                     const preloader = clonedDoc.querySelector('.preloader');
@@ -153,6 +165,7 @@ function initPdfDownload() {
                     if (annBar) annBar.remove();
                 }
             },
+            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
         const element = document.querySelector('main');

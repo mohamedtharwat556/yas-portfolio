@@ -1165,12 +1165,14 @@ function initPdfDownload() {
 
         // Configure html2pdf options
         const opt = {
-            margin:       [5, 5, 5, 5], // top, left, bottom, right in mm
+            margin:       [15, 15, 15, 15], // top, left, bottom, right in mm
             filename:     filename,
-            image:        { type: 'jpeg', quality: 0.92 },
+            image:        { type: 'jpeg', quality: 0.95 },
             html2canvas:  {
-                scale: 1.5,
+                scale: 2,
                 useCORS: true,
+                scrollY: 0,
+                scrollX: 0,
                 ignoreElements: (element) => {
                     // Ignore video elements
                     return element.tagName === 'VIDEO' ||
@@ -1180,6 +1182,19 @@ function initPdfDownload() {
                            element.classList.contains('back-to-top');
                 },
                 onclone: (clonedDoc) => {
+                    // Add PDF-specific styles
+                    const style = clonedDoc.createElement('style');
+                    style.textContent = `
+                        * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+                        .section { page-break-inside: avoid; }
+                        .tab-panel { page-break-inside: avoid; }
+                        .product-showcase { page-break-inside: avoid; }
+                        .solution-block { page-break-inside: avoid; }
+                        .card { page-break-inside: avoid; }
+                        body { font-family: 'Tajawal', sans-serif !important; }
+                    `;
+                    clonedDoc.head.appendChild(style);
+
                     // Remove all video elements from cloned document
                     const videos = clonedDoc.querySelectorAll('video');
                     videos.forEach(video => video.remove());
@@ -1197,6 +1212,7 @@ function initPdfDownload() {
                     if (annBar) annBar.remove();
                 }
             },
+            pagebreak:     { mode: ['avoid-all', 'css', 'legacy'] },
             jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
 
