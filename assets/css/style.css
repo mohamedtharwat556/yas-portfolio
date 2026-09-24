@@ -3418,6 +3418,7 @@ body.preloading {
         font-family: 'Tajawal', 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
         line-height: 1.6 !important;
         letter-spacing: 0 !important;
+        font-size: 12pt !important;
     }
 
     /* Force color printing */
@@ -3480,6 +3481,53 @@ body.preloading {
     * {
         box-shadow: none !important;
         text-shadow: none !important;
+    }
+
+    /* Ensure all text is visible */
+    h1, h2, h3, h4, h5, h6,
+    p, span, div, li, a,
+    .section-title, .section-desc,
+    .section-label, .product-tags,
+    .solution-items span {
+        visibility: visible !important;
+        display: block !important;
+        opacity: 1 !important;
+    }
+
+    /* Fix video placeholders */
+    .product-video-wrap {
+        display: none !important;
+    }
+
+    /* Fix background images */
+    .brands-video-bg {
+        background: none !important;
+    }
+
+    /* Ensure proper spacing */
+    main {
+        padding: 20px !important;
+    }
+
+    /* Fix display of tabs */
+    .tab-panel {
+        display: block !important;
+    }
+
+    /* Fix display of product content */
+    .product-showcase-content {
+        display: block !important;
+    }
+
+    /* Fix display of solution content */
+    .solution-text {
+        display: block !important;
+    }
+
+    /* Ensure all sections are visible */
+    section {
+        display: block !important;
+        visibility: visible !important;
     }
 }
 
