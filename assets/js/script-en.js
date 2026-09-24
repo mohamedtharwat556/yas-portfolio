@@ -409,4 +409,3 @@ function initPdfDownload() {
         window.print();
     });
 }
-})();
