@@ -1155,13 +1155,29 @@ function initLangPicker() {
    ============================================================ */
 function initPdfDownload() {
     const downloadBtn = document.getElementById('downloadPdfBtn');
-    if (!downloadBtn) return;
+    if (!downloadBtn) {
+        console.log('PDF download button not found');
+        return;
+    }
+
+    console.log('PDF download button found, attaching event listener');
 
     downloadBtn.addEventListener('click', () => {
+        console.log('PDF download button clicked');
+
+        // Check if html2pdf is available
+        if (typeof html2pdf === 'undefined') {
+            console.error('html2pdf library not loaded');
+            alert('عذراً، مكتبة إنشاء PDF لم يتم تحميلها. يرجى تحديث الصفحة والمحاولة مرة أخرى.');
+            return;
+        }
+
         // Get the page language for filename
         const html = document.documentElement;
         const lang = html.getAttribute('lang') || 'ar';
         const filename = `YAS-Portfolio-${lang}.pdf`;
+
+        console.log('Generating PDF for language:', lang);
 
         // Configure html2pdf options
         const opt = {
@@ -1239,9 +1255,12 @@ function initPdfDownload() {
         const element = document.querySelector('main');
 
         if (!element) {
+            console.error('Main element not found');
             alert('عذراً، لم يتم العثور على المحتوى الرئيسي.');
             return;
         }
+
+        console.log('Main element found, starting PDF generation');
 
         // Generate PDF
         const btnText = downloadBtn.innerHTML;
@@ -1249,13 +1268,14 @@ function initPdfDownload() {
         downloadBtn.disabled = true;
 
         html2pdf().set(opt).from(element).save().then(() => {
+            console.log('PDF generated successfully');
             downloadBtn.innerHTML = btnText;
             downloadBtn.disabled = false;
         }).catch(err => {
             console.error('PDF generation failed:', err);
             downloadBtn.innerHTML = btnText;
             downloadBtn.disabled = false;
-            alert('حدث خطأ أثناء إنشاء ملف PDF. يرجى المحاولة مرة أخرى.');
+            alert('حدث خطأ أثناء إنشاء ملف PDF. يرجى المحاولة مرة أخرى.\n\nالخطأ: ' + err.message);
         });
     });
 }
