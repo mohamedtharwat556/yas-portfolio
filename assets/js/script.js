@@ -1182,18 +1182,37 @@ function initPdfDownload() {
                            element.classList.contains('back-to-top');
                 },
                 onclone: (clonedDoc) => {
-                    // Add PDF-specific styles
+                    // Add PDF-specific styles for better Arabic rendering
                     const style = clonedDoc.createElement('style');
                     style.textContent = `
                         * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-                        .section { page-break-inside: avoid; }
+                        html, body { direction: rtl !important; }
+                        body {
+                            font-family: 'Tajawal', 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+                            line-height: 1.6 !important;
+                            letter-spacing: 0 !important;
+                        }
+                        h1, h2, h3, h4, h5, h6 {
+                            font-family: 'Tajawal', 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+                            font-weight: 700 !important;
+                        }
+                        p, span, div, li, a {
+                            font-family: 'Tajawal', 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+                        }
+                        .section { page-break-inside: avoid; margin-bottom: 20px !important; }
                         .tab-panel { page-break-inside: avoid; }
                         .product-showcase { page-break-inside: avoid; }
                         .solution-block { page-break-inside: avoid; }
                         .card { page-break-inside: avoid; }
-                        body { font-family: 'Tajawal', sans-serif !important; }
+                        .container { max-width: 100% !important; padding: 10px !important; }
+                        .products-tabs { display: flex !important; flex-wrap: wrap !important; }
+                        .tab-btn { flex: 1 0 auto !important; margin: 2px !important; }
                     `;
                     clonedDoc.head.appendChild(style);
+
+                    // Ensure RTL direction
+                    clonedDoc.documentElement.setAttribute('dir', 'rtl');
+                    clonedDoc.documentElement.setAttribute('lang', 'ar');
 
                     // Remove all video elements from cloned document
                     const videos = clonedDoc.querySelectorAll('video');
@@ -1218,6 +1237,11 @@ function initPdfDownload() {
 
         // Select the main content to convert (exclude footer and other unwanted elements)
         const element = document.querySelector('main');
+
+        if (!element) {
+            alert('عذراً، لم يتم العثور على المحتوى الرئيسي.');
+            return;
+        }
 
         // Generate PDF
         const btnText = downloadBtn.innerHTML;

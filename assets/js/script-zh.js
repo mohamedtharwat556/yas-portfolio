@@ -146,13 +146,31 @@ function initPdfDownload() {
                     const style = clonedDoc.createElement('style');
                     style.textContent = `
                         * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-                        .section { page-break-inside: avoid; }
+                        html, body { direction: ltr !important; }
+                        body {
+                            font-family: 'Noto Sans SC', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+                            line-height: 1.6 !important;
+                            letter-spacing: 0 !important;
+                        }
+                        h1, h2, h3, h4, h5, h6 {
+                            font-family: 'Noto Sans SC', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+                            font-weight: 700 !important;
+                        }
+                        p, span, div, li, a {
+                            font-family: 'Noto Sans SC', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+                        }
+                        .section { page-break-inside: avoid; margin-bottom: 20px !important; }
                         .tab-panel { page-break-inside: avoid; }
                         .product-showcase { page-break-inside: avoid; }
                         .solution-block { page-break-inside: avoid; }
                         .card { page-break-inside: avoid; }
+                        .container { max-width: 100% !important; padding: 10px !important; }
+                        .products-tabs { display: flex !important; flex-wrap: wrap !important; }
+                        .tab-btn { flex: 1 0 auto !important; margin: 2px !important; }
                     `;
                     clonedDoc.head.appendChild(style);
+                    clonedDoc.documentElement.setAttribute('dir', 'ltr');
+                    clonedDoc.documentElement.setAttribute('lang', 'zh');
                     const videos = clonedDoc.querySelectorAll('video');
                     videos.forEach(video => video.remove());
                     const preloader = clonedDoc.querySelector('.preloader');
@@ -169,6 +187,11 @@ function initPdfDownload() {
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
         const element = document.querySelector('main');
+
+        if (!element) {
+            alert('Sorry, main content not found.');
+            return;
+        }
         const btnText = downloadBtn.innerHTML;
         downloadBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 生成中...';
         downloadBtn.disabled = true;
