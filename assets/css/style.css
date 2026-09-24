@@ -3427,42 +3427,87 @@ body.preloading {
         print-color-adjust: exact !important;
     }
 
-    /* Page break rules */
-    .section {
+    /* Page break rules - ensure no content is split */
+    section {
+        page-break-before: auto;
+        page-break-after: auto;
         page-break-inside: avoid;
-        margin-bottom: 20px !important;
+        margin-bottom: 30px !important;
+        margin-top: 20px !important;
     }
 
+    /* Force page breaks before major sections */
+    #hero {
+        page-break-after: always;
+    }
+
+    #about {
+        page-break-before: always;
+        page-break-after: always;
+    }
+
+    #solutions {
+        page-break-before: always;
+        page-break-after: always;
+    }
+
+    #products {
+        page-break-before: always;
+        page-break-after: always;
+    }
+
+    #maintenance {
+        page-break-before: always;
+        page-break-after: always;
+    }
+
+    #faq {
+        page-break-before: always;
+        page-break-after: always;
+    }
+
+    #contact {
+        page-break-before: always;
+    }
+
+    /* Prevent splitting of product tabs */
     .tab-panel {
         page-break-inside: avoid;
+        min-height: 100vh !important;
     }
 
-    .product-showcase {
-        page-break-inside: avoid;
-    }
-
+    /* Prevent splitting of solution blocks */
     .solution-block {
         page-break-inside: avoid;
+        min-height: 100vh !important;
     }
 
+    /* Prevent splitting of cards */
     .card {
+        page-break-inside: avoid;
+    }
+
+    /* Prevent splitting of showcase elements */
+    .product-showcase {
         page-break-inside: avoid;
     }
 
     /* Adjust layout for print */
     .container {
         max-width: 100% !important;
-        padding: 10px !important;
+        padding: 20px !important;
     }
 
     .products-tabs {
         display: flex !important;
         flex-wrap: wrap !important;
+        margin-bottom: 20px !important;
     }
 
     .tab-btn {
         flex: 1 0 auto !important;
-        margin: 2px !important;
+        margin: 5px !important;
+        font-size: 11pt !important;
     }
 
     /* Remove animations */
@@ -3506,28 +3551,100 @@ body.preloading {
 
     /* Ensure proper spacing */
     main {
-        padding: 20px !important;
+        padding: 0 !important;
     }
 
     /* Fix display of tabs */
     .tab-panel {
         display: block !important;
+        padding: 20px !important;
     }
 
     /* Fix display of product content */
     .product-showcase-content {
         display: block !important;
+        margin-bottom: 20px !important;
     }
 
     /* Fix display of solution content */
     .solution-text {
         display: block !important;
+        margin-bottom: 20px !important;
     }
 
     /* Ensure all sections are visible */
     section {
         display: block !important;
         visibility: visible !important;
+    }
+
+    /* Improve typography for print */
+    h1 {
+        font-size: 24pt !important;
+        margin-bottom: 20px !important;
+        page-break-after: avoid;
+    }
+
+    h2 {
+        font-size: 18pt !important;
+        margin-bottom: 15px !important;
+        page-break-after: avoid;
+    }
+
+    h3 {
+        font-size: 14pt !important;
+        margin-bottom: 10px !important;
+        page-break-after: avoid;
+    }
+
+    p {
+        margin-bottom: 10px !important;
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* Improve list formatting */
+    ul, ol {
+        margin-bottom: 15px !important;
+    }
+
+    li {
+        margin-bottom: 5px !important;
+    }
+
+    /* Improve spacing between elements */
+    .section-header {
+        margin-bottom: 25px !important;
+    }
+
+    .product-showcase {
+        margin-bottom: 30px !important;
+    }
+
+    /* Ensure colors are preserved */
+    .btn-primary,
+    .btn-secondary,
+    .section-label {
+        background-color: #0f2d6e !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Fix grid layouts */
+    .products-grid,
+    .services-grid,
+    .solution-offerings,
+    .edu-offerings {
+        display: block !important;
+    }
+
+    .service-card,
+    .solution-offering,
+    .edu-offering {
+        display: block !important;
+        margin-bottom: 20px !important;
+        page-break-inside: avoid;
     }
 }
 
