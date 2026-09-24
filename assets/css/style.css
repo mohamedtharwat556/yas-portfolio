@@ -3388,6 +3388,102 @@ body.preloading {
 }
 
 /* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+    /* Hide unwanted elements */
+    #navbar,
+    #announcementBar,
+    .preloader,
+    .nav-overlay,
+    .back-to-top,
+    .footer,
+    .video,
+    video,
+    iframe {
+        display: none !important;
+    }
+
+    /* Remove background videos */
+    .brands-video-bg,
+    .hero-video-bg,
+    .about-video-bg {
+        display: none !important;
+    }
+
+    /* Ensure proper Arabic rendering */
+    html,
+    body {
+        direction: rtl !important;
+        font-family: 'Tajawal', 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        line-height: 1.6 !important;
+        letter-spacing: 0 !important;
+    }
+
+    /* Force color printing */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Page break rules */
+    .section {
+        page-break-inside: avoid;
+        margin-bottom: 20px !important;
+    }
+
+    .tab-panel {
+        page-break-inside: avoid;
+    }
+
+    .product-showcase {
+        page-break-inside: avoid;
+    }
+
+    .solution-block {
+        page-break-inside: avoid;
+    }
+
+    .card {
+        page-break-inside: avoid;
+    }
+
+    /* Adjust layout for print */
+    .container {
+        max-width: 100% !important;
+        padding: 10px !important;
+    }
+
+    .products-tabs {
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+
+    .tab-btn {
+        flex: 1 0 auto !important;
+        margin: 2px !important;
+    }
+
+    /* Remove animations */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Reveal animations - show all */
+    [data-reveal] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Remove shadows for print */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+}
+
+/* ============================================================
    LANGUAGE PICKER DROPDOWN
    ============================================================ */
 .lang-picker {
