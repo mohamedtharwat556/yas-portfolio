@@ -414,7 +414,22 @@ function initPdfDownload() {
             margin:       10,
             filename:     filename,
             image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2, useCORS: true },
+            html2canvas:  {
+                scale: 2,
+                useCORS: true,
+                ignoreElements: (element) => {
+                    return element.tagName === 'VIDEO' ||
+                           element.tagName === 'IFRAME' ||
+                           element.classList.contains('preloader') ||
+                           element.classList.contains('nav-overlay');
+                },
+                onclone: (clonedDoc) => {
+                    const videos = clonedDoc.querySelectorAll('video');
+                    videos.forEach(video => video.remove());
+                    const preloader = clonedDoc.querySelector('.preloader');
+                    if (preloader) preloader.remove();
+                }
+            },
             jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
 
