@@ -1274,6 +1274,19 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: var(--shadow-sm);
 }
 
+@media (max-width: 768px) {
+    .products-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        scrollbar-width: none;
+    }
+    .products-tabs::-webkit-scrollbar { display: none; }
+    .tab-btn { flex-shrink: 0; min-width: max-content; }
+}
+
 .tab-btn {
     display: flex;
     align-items: center;
@@ -2291,8 +2304,22 @@ h1, h2, h3, h4, h5, h6 {
     .footer-brand { grid-column: span 1; }
 
     /* Products tabs */
-    .products-tabs { gap: var(--sp-1); }
-    .tab-btn { font-size: var(--fs-xs); padding: var(--sp-2) var(--sp-3); }
+    .products-tabs {
+        gap: var(--sp-1);
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        justify-content: flex-start;
+        scrollbar-width: none;
+    }
+    .products-tabs::-webkit-scrollbar { display: none; }
+    .tab-btn {
+        font-size: var(--fs-xs);
+        padding: var(--sp-2) var(--sp-3);
+        flex-shrink: 0;
+        min-width: max-content;
+    }
 
     /* Product showcase */
     .product-showcase {
@@ -3233,8 +3260,24 @@ body.preloading {
     .hik-reward-video-wrap { min-height: 180px; }
 
     /* ── Products ── */
-    .products-tabs { gap: var(--sp-1); padding: var(--sp-2); }
-    .tab-btn { font-size: 10px; padding: var(--sp-2) var(--sp-2); gap: var(--sp-1); }
+    .products-tabs {
+        gap: var(--sp-1);
+        padding: var(--sp-2);
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        justify-content: flex-start;
+        scrollbar-width: none;
+    }
+    .products-tabs::-webkit-scrollbar { display: none; }
+    .tab-btn {
+        font-size: 11px;
+        padding: var(--sp-2) var(--sp-3);
+        gap: var(--sp-1);
+        flex-shrink: 0;
+        min-width: max-content;
+    }
     .tab-btn i { font-size: var(--fs-sm); }
     .product-showcase {
         grid-template-columns: 1fr !important;
