@@ -47,42 +47,80 @@
         </div>
     </div>
 
-    <!-- ==================== NAVBAR ==================== -->
-    <nav class="navbar" id="navbar" role="navigation">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="index-zh.html" class="nav-brand-link">
-                    <img src="YAS_Logo_Final.svg" alt="YAS" class="nav-logo-img" />
-                </a>
-            </div>
-
-            <ul class="nav-menu" id="navMenu" role="menubar">
-                <li role="none"><a href="index-zh.html#home" class="nav-link" role="menuitem">首页</a></li>
-                <li role="none"><a href="index-zh.html#about" class="nav-link" role="menuitem">关于我们</a></li>
-                <li role="none"><a href="index-zh.html#solutions" class="nav-link" role="menuitem">解决方案</a></li>
-                <li role="none"><a href="index-zh.html#products" class="nav-link" role="menuitem">产品</a></li>
-                <li role="none"><a href="index-zh.html#maintenance" class="nav-link" role="menuitem">维护</a></li>
-                <li role="none"><a href="index-zh.html#faq" class="nav-link" role="menuitem">常见问题</a></li>
-                <li role="none"><a href="index-zh.html#contact" class="nav-link" role="menuitem">联系我们</a></li>
-                <li role="none"><a href="story-zh.html" class="nav-link active" role="menuitem">我们的故事</a></li>
-            </ul>
-
-            <button class="burger-btn" id="burgerBtn" aria-label="菜单" aria-expanded="false" aria-controls="navMenu">
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-            </button>
+    <!-- ==================== ANNOUNCEMENT BAR ==================== -->
+    <div class="announcement-bar" id="announcementBar" role="banner">
+        <div class="announcement-inner">
+            <span class="ann-badge">
+                <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+                Authorized Distributor
+            </span>
+            <p class="ann-text">
+                <strong>YAS</strong> — Official Authorized Distributor for
+                <strong class="ann-hik">Hikvision</strong>
+                Displays in Egypt
+            </p>
+            <span class="ann-badge ann-badge--outline">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                وكيل رسمي معتمد
+            </span>
         </div>
-    </nav>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <nav class="nav-inner">
+
+                <!-- Logo -->
+                <a href="index-zh.html" class="nav-logo" aria-label="YAS 首页">
+                    <img src="YAS_Logo_Final.svg" alt="YAS" class="logo-img" />
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="nav-menu" id="navMenu" role="menubar">
+                    <li role="none"><a href="index-zh.html#home"        class="nav-link" role="menuitem">首页</a></li>
+                    <li role="none"><a href="index-zh.html#about"       class="nav-link" role="menuitem">关于我们</a></li>
+                    <li role="none"><a href="index-zh.html#solutions"   class="nav-link" role="menuitem">解决方案</a></li>
+                    <li role="none"><a href="index-zh.html#products"    class="nav-link" role="menuitem">产品</a></li>
+                    <li role="none"><a href="index-zh.html#maintenance" class="nav-link" role="menuitem">维护</a></li>
+                    <li role="none"><a href="index-zh.html#faq"         class="nav-link" role="menuitem">常见问题</a></li>
+                    <li role="none"><a href="index-zh.html#contact"     class="nav-link" role="menuitem">联系我们</a></li>
+                    <li role="none"><a href="story-zh.html"            class="nav-link active" role="menuitem">我们的故事</a></li>
+                </ul>
+
+                <!-- CTA + Burger -->
+                <div class="nav-actions">
+                    <!-- Language Picker -->
+                    <div class="lang-picker" id="langPicker">
+                        <button class="lang-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="选择语言">
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                            <span class="lang-current">ZH</span>
+                            <i class="fa-solid fa-chevron-down lang-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="lang-dropdown" role="listbox" aria-label="选择语言">
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="index.html">🇪🇬 العربية</a></li>
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="index-en.html">🇬🇧 English</a></li>
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="index-de.html">🇩🇪 Deutsch</a></li>
+                            <li role="option" aria-selected="true"  class="lang-opt lang-opt--active"><a href="index-zh.html">🇨🇳 中文</a></li>
+                        </ul>
+                    </div>
+                    <a href="index-zh.html#contact" class="btn btn-primary btn-sm">联系我们</a>
+                    <button class="burger" id="burgerBtn" aria-label="打开菜单" aria-expanded="false" aria-controls="navMenu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
 
     <!-- ==================== HERO SECTION ==================== -->
-    <section class="section hero-section" id="hero">
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content" data-reveal="fade-up">
-                <span class="hero-badge">自2003年起</span>
                 <h1 class="hero-title">我们的故事</h1>
                 <p class="hero-subtitle">20多年的信任建立和技术供应</p>
-                <div class="hero-cta">
+                <div class="hero-actions">
                     <a href="#timeline" class="btn btn-primary btn-lg">
                         <i class="fa-solid fa-history" aria-hidden="true"></i>
                         探索我们的历程
@@ -97,8 +135,13 @@
     </section>
 
     <!-- ==================== VIDEO SECTION ==================== -->
-    <section class="section video-section">
+    <section class="section" id="video">
         <div class="container">
+            <div class="section-header" data-reveal="fade-up">
+                <span class="section-label">我们的历程</span>
+                <h2 class="section-title">我们历史上的重要里程碑</h2>
+                <p class="section-desc">从卑微的起点到今天的成就</p>
+            </div>
             <div class="video-container" data-reveal="fade-up">
                 <div class="video-wrapper">
                     <iframe 
@@ -111,16 +154,12 @@
                         allowfullscreen>
                     </iframe>
                 </div>
-                <div class="video-info">
-                    <h2>我们的历程</h2>
-                    <p>我们历史上的重要里程碑 - 从卑微的起点到今天的成就</p>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- ==================== TIMELINE SECTION ==================== -->
-    <section class="section timeline-section" id="timeline">
+    <section class="section" id="timeline">
         <div class="container">
             <div class="section-header" data-reveal="fade-up">
                 <span class="section-label">我们的历史</span>
@@ -198,7 +237,7 @@
     </section>
 
     <!-- ==================== STATS SECTION ==================== -->
-    <section class="section stats-section">
+    <section class="section" id="stats">
         <div class="container">
             <div class="section-header" data-reveal="fade-up">
                 <span class="section-label">我们的成就</span>
@@ -242,7 +281,7 @@
     </section>
 
     <!-- ==================== CTA SECTION ==================== -->
-    <section class="section cta-section">
+    <section class="section" id="cta">
         <div class="container">
             <div class="cta-inner" data-reveal="fade-up">
                 <h2>成为我们持续历程的一部分</h2>
