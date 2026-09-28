@@ -46,42 +46,80 @@
         </div>
     </div>
 
-    <!-- ==================== NAVBAR ==================== -->
-    <nav class="navbar" id="navbar" role="navigation">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="index.html" class="nav-brand-link">
-                    <img src="YAS_Logo_Final.svg" alt="YAS" class="nav-logo-img" />
-                </a>
-            </div>
-
-            <ul class="nav-menu" id="navMenu" role="menubar">
-                <li role="none"><a href="index.html#home" class="nav-link" role="menuitem">الرئيسية</a></li>
-                <li role="none"><a href="index.html#about" class="nav-link" role="menuitem">من نحن</a></li>
-                <li role="none"><a href="index.html#solutions" class="nav-link" role="menuitem">حلولنا</a></li>
-                <li role="none"><a href="index.html#products" class="nav-link" role="menuitem">منتجاتنا</a></li>
-                <li role="none"><a href="index.html#maintenance" class="nav-link" role="menuitem">الصيانة</a></li>
-                <li role="none"><a href="index.html#faq" class="nav-link" role="menuitem">الأسئلة الشائعة</a></li>
-                <li role="none"><a href="index.html#contact" class="nav-link" role="menuitem">تواصل معنا</a></li>
-                <li role="none"><a href="story.html" class="nav-link active" role="menuitem">قصتنا</a></li>
-            </ul>
-
-            <button class="burger-btn" id="burgerBtn" aria-label="القائمة" aria-expanded="false" aria-controls="navMenu">
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-                <span class="burger-line"></span>
-            </button>
+    <!-- ==================== ANNOUNCEMENT BAR ==================== -->
+    <div class="announcement-bar" id="announcementBar" role="banner">
+        <div class="announcement-inner">
+            <span class="ann-badge">
+                <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+                وكيل رسمي معتمد
+            </span>
+            <p class="ann-text">
+                <strong>YAS</strong> — الوكيل الرسمي المعتمد لشاشات
+                <strong class="ann-hik">Hikvision</strong>
+                في مصر
+            </p>
+            <span class="ann-badge ann-badge--outline">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                Authorized Distributor
+            </span>
         </div>
-    </nav>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <nav class="nav-inner">
+
+                <!-- Logo -->
+                <a href="index.html" class="nav-logo" aria-label="YAS الرئيسية">
+                    <img src="YAS_Logo_Final.svg" alt="YAS" class="logo-img" />
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="nav-menu" id="navMenu" role="menubar">
+                    <li role="none"><a href="index.html#home"        class="nav-link" role="menuitem">الرئيسية</a></li>
+                    <li role="none"><a href="index.html#about"       class="nav-link" role="menuitem">من نحن</a></li>
+                    <li role="none"><a href="index.html#solutions"   class="nav-link" role="menuitem">حلولنا</a></li>
+                    <li role="none"><a href="index.html#products"    class="nav-link" role="menuitem">منتجاتنا</a></li>
+                    <li role="none"><a href="index.html#maintenance" class="nav-link" role="menuitem">الصيانة</a></li>
+                    <li role="none"><a href="index.html#faq"         class="nav-link" role="menuitem">الأسئلة الشائعة</a></li>
+                    <li role="none"><a href="index.html#contact"     class="nav-link" role="menuitem">تواصل معنا</a></li>
+                    <li role="none"><a href="story.html"            class="nav-link active" role="menuitem">قصتنا</a></li>
+                </ul>
+
+                <!-- CTA + Burger -->
+                <div class="nav-actions">
+                    <!-- Language Picker -->
+                    <div class="lang-picker" id="langPicker">
+                        <button class="lang-picker-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="اختر اللغة">
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                            <span class="lang-current">AR</span>
+                            <i class="fa-solid fa-chevron-down lang-arrow" aria-hidden="true"></i>
+                        </button>
+                        <ul class="lang-dropdown" role="listbox" aria-label="اختر اللغة">
+                            <li role="option" aria-selected="true"  class="lang-opt lang-opt--active"><a href="index.html">🇪🇬 العربية</a></li>
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="index-en.html">🇬🇧 English</a></li>
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="index-de.html">🇩🇪 Deutsch</a></li>
+                            <li role="option" aria-selected="false" class="lang-opt"><a href="index-zh.html">🇨🇳 中文</a></li>
+                        </ul>
+                    </div>
+                    <a href="index.html#contact" class="btn btn-primary btn-sm">تواصل معنا</a>
+                    <button class="burger" id="burgerBtn" aria-label="القائمة" aria-expanded="false" aria-controls="navMenu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
 
     <!-- ==================== HERO SECTION ==================== -->
-    <section class="section hero-section" id="hero">
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content" data-reveal="fade-up">
-                <span class="hero-badge">منذ 2003</span>
                 <h1 class="hero-title">قصتنا</h1>
                 <p class="hero-subtitle">أكثر من عقدين من بناء الثقة وتقديم التكنولوجيا</p>
-                <div class="hero-cta">
+                <div class="hero-actions">
                     <a href="#timeline" class="btn btn-primary btn-lg">
                         <i class="fa-solid fa-history" aria-hidden="true"></i>
                         استكشف رحلتنا
@@ -96,8 +134,13 @@
     </section>
 
     <!-- ==================== VIDEO SECTION ==================== -->
-    <section class="section video-section">
+    <section class="section" id="video">
         <div class="container">
+            <div class="section-header" data-reveal="fade-up">
+                <span class="section-label">رحلتنا</span>
+                <h2 class="section-title">محطات مهمة في تاريخنا</h2>
+                <p class="section-desc">من البداية المتواضعة إلى المكانة التي نتمتع بها اليوم</p>
+            </div>
             <div class="video-container" data-reveal="fade-up">
                 <div class="video-wrapper">
                     <iframe 
@@ -110,16 +153,12 @@
                         allowfullscreen>
                     </iframe>
                 </div>
-                <div class="video-info">
-                    <h2>رحلتنا</h2>
-                    <p>محطات مهمة في تاريخنا - من البداية المتواضعة إلى المكانة التي نتمتع بها اليوم</p>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- ==================== TIMELINE SECTION ==================== -->
-    <section class="section timeline-section" id="timeline">
+    <section class="section" id="timeline">
         <div class="container">
             <div class="section-header" data-reveal="fade-up">
                 <span class="section-label">تاريخنا</span>
@@ -197,7 +236,7 @@
     </section>
 
     <!-- ==================== STATS SECTION ==================== -->
-    <section class="section stats-section">
+    <section class="section" id="stats">
         <div class="container">
             <div class="section-header" data-reveal="fade-up">
                 <span class="section-label">إنجازاتنا</span>
@@ -241,7 +280,7 @@
     </section>
 
     <!-- ==================== CTA SECTION ==================== -->
-    <section class="section cta-section">
+    <section class="section" id="cta">
         <div class="container">
             <div class="cta-inner" data-reveal="fade-up">
                 <h2>كن جزءاً من رحلتنا القادمة</h2>
