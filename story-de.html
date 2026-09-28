@@ -118,6 +118,7 @@
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content" data-reveal="fade-up">
+                <span class="hero-badge">Seit 2003</span>
                 <h1 class="hero-title">Unsere Geschichte</h1>
                 <p class="hero-subtitle">Über 20 Jahre Vertrauensaufbau und Technologieversorgung</p>
                 <div class="hero-actions">
@@ -352,5 +353,117 @@
 
     <!-- Scripts -->
     <script src="assets/js/script-de.js"></script>
+    <script>
+        // Story Page Specific Animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate timeline items on scroll
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const item = entry.target;
+                        const delay = item.dataset.delay || 0;
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0) scale(1)';
+                        }, delay);
+                        timelineObserver.unobserve(item);
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -100px 0px'
+            });
+
+            timelineItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(50px) scale(0.9)';
+                item.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                timelineObserver.observe(item);
+            });
+
+            // Animate stat cards on scroll
+            const statCards = document.querySelectorAll('.stat-card');
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const card = entry.target;
+                        const delay = card.dataset.delay || 0;
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0) scale(1)';
+                        }, delay);
+                        statsObserver.unobserve(card);
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '0px 0px -100px 0px'
+            });
+
+            statCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px) scale(0.9)';
+                card.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                card.dataset.delay = (index + 1) * 100;
+                statsObserver.observe(card);
+            });
+
+            // Parallax effect for hero
+            const hero = document.getElementById('hero');
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                if (hero) {
+                    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+            });
+
+            // Magnetic effect for buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translate(0, 0)';
+                });
+            });
+
+            // Counter animation for stats
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const numberObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        const text = element.textContent;
+                        const target = parseInt(text.replace(/\D/g, ''));
+                        const suffix = text.replace(/\d/g, '');
+                        
+                        let current = 0;
+                        const increment = target / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                element.textContent = text;
+                                clearInterval(timer);
+                            } else {
+                                element.textContent = Math.floor(current) + suffix;
+                            }
+                        }, 30);
+                        
+                        numberObserver.unobserve(element);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            statNumbers.forEach(num => {
+                numberObserver.observe(num);
+            });
+        });
+    </script>
 </body>
 </html>
