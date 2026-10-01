@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- SEO -->
-    <title>معرضنا | YAS - إنجازاتنا وتكريماتنا</title>
-    <meta name="description" content="معرض YAS - فيديوهات RMA، تكريمات، صور الإنجازات، وشهادات الاعتماد" />
-    <meta name="keywords" content="YAS, معرضنا, RMA, تكريمات, شهادات, إنجازات" />
+    <title>معرضنا | YAS - صور وفيديوهات</title>
+    <meta name="description" content="معرض YAS - صور وفيديوهات RMA، تكريمات، وإنجازات" />
+    <meta name="keywords" content="YAS, معرضنا, صور, فيديوهات, RMA, تكريمات" />
     <meta name="author" content="YAS" />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="معرضنا | YAS - إنجازاتنا وتكريماتنا" />
-    <meta property="og:description" content="معرض YAS - فيديوهات RMA، تكريمات، صور الإنجازات، وشهادات الاعتماد" />
+    <meta property="og:title" content="معرضنا | YAS - صور وفيديوهات" />
+    <meta property="og:description" content="معرض YAS - صور وفيديوهات RMA، تكريمات، وإنجازات" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ar_EG" />
 
@@ -29,7 +29,232 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/mobile.css" />
-    <link rel="stylesheet" href="assets/css/story.css" />
+
+    <!-- Gallery CSS -->
+    <style>
+        .gallery-page {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%);
+            min-height: 100vh;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .gallery-header h1 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .gallery-header p {
+            font-size: 1.2rem;
+            color: #a0aec0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 30px;
+            border: 2px solid #3b82f6;
+            background: transparent;
+            color: #3b82f6;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #3b82f6;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 16/9;
+            background: #1a2a4a;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.4);
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img,
+        .gallery-item:hover video {
+            transform: scale(1.1);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-info {
+            color: #fff;
+        }
+
+        .gallery-item-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .gallery-item-info p {
+            font-size: 0.9rem;
+            color: #a0aec0;
+        }
+
+        .gallery-item-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 3rem;
+            color: #fff;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-icon {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .lightbox-content img,
+        .lightbox-content video {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: #3b82f6;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            padding: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            color: #3b82f6;
+        }
+
+        .lightbox-prev {
+            right: 30px;
+        }
+
+        .lightbox-next {
+            left: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-page {
+                padding: 100px 0 60px;
+            }
+
+            .gallery-header h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="YAS_Logo_Final.svg" />
@@ -113,167 +338,100 @@
         </div>
     </header>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero" id="hero">
-        <div class="hero-bg"></div>
+    <!-- ==================== GALLERY PAGE ==================== -->
+    <section class="gallery-page">
         <div class="container">
-            <div class="hero-content" data-reveal="fade-up">
-                <span class="hero-badge">إنجازاتنا</span>
-                <h1 class="hero-title">معرضنا</h1>
-                <p class="hero-subtitle">فيديوهات RMA، تكريمات، صور الإنجازات، وشهادات الاعتماد</p>
-                <div class="hero-actions">
-                    <a href="#rma" class="btn btn-primary btn-lg">
-                        <i class="fa-solid fa-play-circle" aria-hidden="true"></i>
-                        شاهد فيديو RMA
-                    </a>
-                    <a href="#achievements" class="btn btn-outline btn-lg">
-                        <i class="fa-solid fa-trophy" aria-hidden="true"></i>
-                        إنجازاتنا
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== RMA VIDEO SECTION ==================== -->
-    <section class="section" id="rma">
-        <div class="container">
-            <div class="section-header" data-reveal="fade-up">
-                <span class="section-label">خدمات ما بعد البيع</span>
-                <h2 class="section-title">نظام RMA من Hikvision</h2>
-                <p class="section-desc">شاهد كيف نقدم خدمات الصيانة والدعم الفني المتميزة</p>
-            </div>
-            <div class="video-container" data-reveal="fade-up">
-                <div class="video-wrapper">
-                    <iframe 
-                        width="100%" 
-                        height="500" 
-                        src="https://www.youtube.com/embed/drakh-d7hdk8" 
-                        title="RMA Service - YAS" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== RMA INFO SECTION ==================== -->
-    <section class="section" id="rma-info">
-        <div class="container">
-            <div class="section-header" data-reveal="fade-up">
-                <span class="section-label">عن RMA</span>
-                <h2 class="section-title">ما هو نظام الـ RMA؟</h2>
-                <p class="section-desc">خدمات متكاملة لما بعد البيع والدعم الفني</p>
+            <div class="gallery-header">
+                <h1>معرضنا</h1>
+                <p>استكشف صورنا وفيديوهاتنا التي توثق رحلتنا وإنجازاتنا</p>
             </div>
 
-            <div class="timeline">
-                <div class="timeline-item" data-reveal="fade-up" data-delay="0">
-                    <div class="timeline-year">
-                        <i class="fa-solid fa-wrench" aria-hidden="true"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>الصيانة والإصلاح</h3>
-                        <p>إرسال الأجهزة المعيبة أو التالفة (مثل الكاميرات أو أجهزة التسجيل DVR/NVR) لإصلاحها بدقة واحترافية.</p>
-                        <div class="timeline-tags">
-                            <span class="timeline-tag">إصلاح احترافي</span>
-                            <span class="timeline-tag">فنيين معتمدين</span>
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="video">فيديوهات</button>
+                <button class="filter-btn" data-filter="photo">صور</button>
+                <button class="filter-btn" data-filter="award">تكريمات</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- RMA Video -->
+                <div class="gallery-item" data-category="video" data-src="assets/images/gallery/RMA.mp4" data-type="video">
+                    <video src="assets/images/gallery/RMA.mp4" muted loop></video>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <h3>خدمات RMA</h3>
+                            <p>نظام الصيانة والدعم الفني</p>
                         </div>
                     </div>
+                    <div class="gallery-item-icon">
+                        <i class="fa-solid fa-play-circle"></i>
+                    </div>
                 </div>
 
-                <div class="timeline-item" data-reveal="fade-up" data-delay="100">
-                    <div class="timeline-year">
-                        <i class="fa-solid fa-sync-alt" aria-hidden="true"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>الاستبدال</h3>
-                        <p>استبدال القطع التالفة بقطع جديدة إذا كانت داخل فترة الضمان لضمان أفضل أداء.</p>
-                        <div class="timeline-tags">
-                            <span class="timeline-tag">قطع أصلية</span>
-                            <span class="timeline-tag">ضمان كامل</span>
+                <!-- Placeholder for more items -->
+                <div class="gallery-item" data-category="photo" data-src="assets/images/products/hikvision-product.mp4" data-type="video">
+                    <video src="assets/images/products/hikvision-product.mp4" muted loop></video>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <h3>منتجات Hikvision</h3>
+                            <p>شاشات تفاعلية وأجهزة</p>
                         </div>
                     </div>
+                    <div class="gallery-item-icon">
+                        <i class="fa-solid fa-play-circle"></i>
+                    </div>
                 </div>
 
-                <div class="timeline-item" data-reveal="fade-up" data-delay="200">
-                    <div class="timeline-year">
-                        <i class="fa-solid fa-ticket-alt" aria-hidden="true"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>رقم الـ RMA</h3>
-                        <p>رقم طلب (تيكت) يتم فتحه لك لتتبع حالة جهازك حتى تنتهي صيانته واستلامه.</p>
-                        <div class="timeline-tags">
-                            <span class="timeline-tag timeline-tag--active">تتبع فوري</span>
-                            <span class="timeline-tag timeline-tag--active">شفافية كاملة</span>
+                <div class="gallery-item" data-category="video" data-src="assets/images/products/interactive-screens.mp4" data-type="video">
+                    <video src="assets/images/products/interactive-screens.mp4" muted loop></video>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <h3>الشاشات التفاعلية</h3>
+                            <p>حلول تعليمية متقدمة</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== ACHIEVEMENTS SECTION ==================== -->
-    <section class="section" id="achievements">
-        <div class="container">
-            <div class="section-header" data-reveal="fade-up">
-                <span class="section-label">إنجازاتنا</span>
-                <h2 class="section-title">تكريمات وشهادات الاعتماد</h2>
-                <p class="section-desc">فخورون بتكريماتنا وشهادات الاعتماد من الشركات العالمية</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card" data-reveal="fade-up" data-delay="0">
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-award" aria-hidden="true"></i>
+                    <div class="gallery-item-icon">
+                        <i class="fa-solid fa-play-circle"></i>
                     </div>
-                    <div class="stat-number">+50</div>
-                    <div class="stat-label">تكريم وشهادة</div>
                 </div>
 
-                <div class="stat-card" data-reveal="fade-up" data-delay="100">
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                <div class="gallery-item" data-category="video" data-src="assets/images/products/laptops.mp4" data-type="video">
+                    <video src="assets/images/products/laptops.mp4" muted loop></video>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <h3>اللابتوبات</h3>
+                            <p>أجهزة لكل الاحتياجات</p>
+                        </div>
                     </div>
-                    <div class="stat-number">+30</div>
-                    <div class="stat-label">شريك عالمي</div>
-                </div>
-
-                <div class="stat-card" data-reveal="fade-up" data-delay="200">
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <div class="gallery-item-icon">
+                        <i class="fa-solid fa-play-circle"></i>
                     </div>
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">رضا العملاء</div>
                 </div>
 
-                <div class="stat-card" data-reveal="fade-up" data-delay="300">
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+                <div class="gallery-item" data-category="video" data-src="assets/images/products/pc.mp4" data-type="video">
+                    <video src="assets/images/products/pc.mp4" muted loop></video>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <h3>أجهزة الـ PC</h3>
+                            <p>حلول للمؤسسات</p>
+                        </div>
                     </div>
-                    <div class="stat-number">+20</div>
-                    <div class="stat-label">سنة خبرة</div>
+                    <div class="gallery-item-icon">
+                        <i class="fa-solid fa-play-circle"></i>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ==================== CTA SECTION ==================== -->
-    <section class="section" id="cta">
-        <div class="container">
-            <div class="cta-inner" data-reveal="fade-up">
-                <h2>كن جزءاً من إنجازاتنا القادمة</h2>
-                <p>نحن نستثمر في الجودة والخدمة المتميزة لنكون شريكك التقني الموثوق</p>
-                <div class="cta-actions">
-                    <a href="index.html#contact" class="btn btn-primary btn-lg">
-                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                        تواصل مع YAS
-                    </a>
-                    <a href="index.html#products" class="btn btn-outline btn-lg">
-                        <i class="fa-solid fa-box" aria-hidden="true"></i>
-                        استكشف منتجاتنا
-                    </a>
+                <div class="gallery-item" data-category="video" data-src="assets/images/products/projectors.mp4" data-type="video">
+                    <video src="assets/images/products/projectors.mp4" muted loop></video>
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-info">
+                            <h3>البروجيكتور</h3>
+                            <p>أجهزة عرض احترافية</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-icon">
+                        <i class="fa-solid fa-play-circle"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -330,118 +488,121 @@
         <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
     </button>
 
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-times"></i></span>
+        <span class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fa-solid fa-chevron-left"></i></span>
+        <div class="lightbox-content" id="lightboxContent"></div>
+    </div>
+
     <!-- Scripts -->
     <script src="assets/js/script.js"></script>
     <script>
-        // Gallery Page Specific Animations
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate timeline items on scroll
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            const timelineObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const item = entry.target;
-                        const delay = item.dataset.delay || 0;
+        // Gallery Filters
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
                         setTimeout(() => {
                             item.style.opacity = '1';
-                            item.style.transform = 'translateY(0) scale(1)';
-                        }, delay);
-                        timelineObserver.unobserve(item);
-                    }
-                });
-            }, {
-                threshold: 0.2,
-                rootMargin: '0px 0px -100px 0px'
-            });
-
-            timelineItems.forEach(item => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(50px) scale(0.9)';
-                item.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                timelineObserver.observe(item);
-            });
-
-            // Animate stat cards on scroll
-            const statCards = document.querySelectorAll('.stat-card');
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const card = entry.target;
-                        const delay = card.dataset.delay || 0;
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
                         setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0) scale(1)';
-                        }, delay);
-                        statsObserver.unobserve(card);
+                            item.style.display = 'none';
+                        }, 300);
                     }
                 });
-            }, {
-                threshold: 0.2,
-                rootMargin: '0px 0px -100px 0px'
             });
+        });
 
-            statCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(50px) scale(0.9)';
-                card.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                card.dataset.delay = (index + 1) * 100;
-                statsObserver.observe(card);
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightboxContent');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        let currentIndex = 0;
+        let visibleItems = [];
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                visibleItems = Array.from(galleryItems).filter(i => i.style.display !== 'none');
+                currentIndex = visibleItems.indexOf(item);
+                openLightbox(item);
             });
+        });
 
-            // Parallax effect for hero
-            const hero = document.getElementById('hero');
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                if (hero) {
-                    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-                }
-            });
+        function openLightbox(item) {
+            const src = item.dataset.src;
+            const type = item.dataset.type;
 
-            // Magnetic effect for buttons
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(btn => {
-                btn.addEventListener('mousemove', (e) => {
-                    const rect = btn.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+            if (type === 'video') {
+                lightboxContent.innerHTML = `<video src="${src}" controls autoplay style="max-width: 100%; max-height: 90vh;"></video>`;
+            } else {
+                lightboxContent.innerHTML = `<img src="${src}" alt="Gallery Image" style="max-width: 100%; max-height: 90vh;">`;
+            }
+
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightboxContent.innerHTML = '';
+            document.body.style.overflow = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        lightboxPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+            openLightbox(visibleItems[currentIndex]);
+        });
+
+        lightboxNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % visibleItems.length;
+            openLightbox(visibleItems[currentIndex]);
+        });
+
+        // Auto-play videos on hover
+        galleryItems.forEach(item => {
+            const video = item.querySelector('video');
+            if (video) {
+                item.addEventListener('mouseenter', () => {
+                    video.play();
                 });
-
-                btn.addEventListener('mouseleave', () => {
-                    btn.style.transform = 'translate(0, 0)';
+                item.addEventListener('mouseleave', () => {
+                    video.pause();
+                    video.currentTime = 0;
                 });
-            });
-
-            // Counter animation for stats
-            const statNumbers = document.querySelectorAll('.stat-number');
-            const numberObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const element = entry.target;
-                        const text = element.textContent;
-                        const target = parseInt(text.replace(/\D/g, ''));
-                        const suffix = text.replace(/\d/g, '');
-                        
-                        let current = 0;
-                        const increment = target / 50;
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                element.textContent = text;
-                                clearInterval(timer);
-                            } else {
-                                element.textContent = Math.floor(current) + suffix;
-                            }
-                        }, 30);
-                        
-                        numberObserver.unobserve(element);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            statNumbers.forEach(num => {
-                numberObserver.observe(num);
-            });
+            }
         });
     </script>
 </body>
