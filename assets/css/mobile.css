@@ -48,7 +48,7 @@ p, h1, h2, h3, h4, h5, h6, a, span, li, button {
 /* ============================================================
    NAVBAR
    ============================================================ */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
     .navbar { top: 30px; }
     .navbar.ann-hidden { top: 0; }
     .nav-inner { gap: var(--sp-3); }
@@ -79,12 +79,16 @@ p, h1, h2, h3, h4, h5, h6, a, span, li, button {
 
     /* Side drawer — LTR */
     .lang-en .nav-menu,
+    .lang-de .nav-menu,
+    .lang-zh .nav-menu,
     html[dir="ltr"] .nav-menu {
         right: auto; left: -100%;
         transition: left 0.35s cubic-bezier(.4,0,.2,1);
         box-shadow: 4px 0 40px rgba(0,0,0,.55);
     }
     .lang-en .nav-menu.open,
+    .lang-de .nav-menu.open,
+    .lang-zh .nav-menu.open,
     html[dir="ltr"] .nav-menu.open { left: 0; right: auto; }
 
     .nav-link {
@@ -98,6 +102,7 @@ p, h1, h2, h3, h4, h5, h6, a, span, li, button {
     .nav-link::after { display: none; }
     .nav-actions .btn-primary { display: none; }
     .burger { display: flex; }
+}
 
     /* Dropdown inside mobile drawer */
     .nav-dropdown-wrap { width: 100%; }
