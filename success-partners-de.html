@@ -97,6 +97,40 @@
             font-size: 1.2rem;
         }
 
+        .partners-filters {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.5);
+            color: #fff;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            border-color: #3b82f6;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
         .partners-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -274,6 +308,13 @@
             <div class="partners-search">
                 <input type="text" id="searchInput" placeholder="Partner suchen..." />
                 <i class="fa-solid fa-search"></i>
+            </div>
+
+            <div class="partners-filters">
+                <button class="filter-btn active" data-filter="all">Alle</button>
+                <button class="filter-btn" data-filter="company">Unternehmen</button>
+                <button class="filter-btn" data-filter="educational">Bildungseinrichtungen</button>
+                <button class="filter-btn" data-filter="customer">Kunden</button>
             </div>
 
             <div class="partners-grid" id="partnersGrid">
@@ -464,8 +505,19 @@
         // Get partner type based on name
         function getPartnerType(name) {
             if (name.includes("مدرسة") || name.includes("جامعة") || name.includes("معهد") || name.includes("سنتر") || name.includes("School")) {
-                return "Bildungseinrichtung";
+                return "educational";
             } else if (name.includes("شركة") || name.includes("Company")) {
+                return "company";
+            } else {
+                return "customer";
+            }
+        }
+
+        // Get partner type display name
+        function getPartnerTypeDisplay(type) {
+            if (type === "educational") {
+                return "Bildungseinrichtung";
+            } else if (type === "company") {
                 return "Unternehmen";
             } else {
                 return "Kunde";
@@ -495,6 +547,7 @@
 
             partners.forEach((partner, index) => {
                 const type = getPartnerType(partner);
+                const typeDisplay = getPartnerTypeDisplay(type);
                 const icon = getPartnerIcon(type);
                 
                 const card = document.createElement('div');
@@ -506,7 +559,7 @@
                     </div>
                     <div class="partner-info">
                         <div class="partner-name">${partner}</div>
-                        <div class="partner-type">${type}</div>
+                        <div class="partner-type">${typeDisplay}</div>
                     </div>
                 `;
                 grid.appendChild(card);
@@ -516,15 +569,48 @@
         // Initial render
         renderPartners(partnersData);
 
+        // Current filter state
+        let currentFilter = 'all';
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update current filter
+                currentFilter = btn.dataset.filter;
+                
+                // Apply filter
+                applyFilters();
+            });
+        });
+
         // Search functionality
         const searchInput = document.getElementById('searchInput');
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            const filtered = partnersData.filter(partner => 
+        searchInput.addEventListener('input', () => {
+            applyFilters();
+        });
+
+        // Apply both search and filter
+        function applyFilters() {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            let filtered = partnersData.filter(partner => 
                 partner.toLowerCase().includes(searchTerm)
             );
+            
+            if (currentFilter !== 'all') {
+                filtered = filtered.filter(partner => {
+                    const type = getPartnerType(partner);
+                    return type === currentFilter;
+                });
+            }
+            
             renderPartners(filtered);
-        });
+        }
 
         // Intersection Observer for animation
         const observer = new IntersectionObserver((entries) => {
