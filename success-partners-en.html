@@ -167,6 +167,14 @@
             color: #fff;
             font-size: 1.2rem;
             flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .partner-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 5px;
         }
 
         .partner-info {
@@ -524,6 +532,14 @@
             }
         }
 
+        // Get partner logo based on name
+        function getPartnerLogo(name) {
+            if (name === "شركة ام النور دمياط") {
+                return "assets/images/partners/melnoor-logo.jpg";
+            }
+            return null;
+        }
+
         // Get icon based on type
         function getPartnerIcon(type) {
             if (type === "Educational Institution") {
@@ -549,13 +565,22 @@
                 const type = getPartnerType(partner);
                 const typeDisplay = getPartnerTypeDisplay(type);
                 const icon = getPartnerIcon(type);
+                const logo = getPartnerLogo(partner);
                 
                 const card = document.createElement('div');
                 card.className = 'partner-card';
                 card.style.animationDelay = `${index * 50}ms`;
+                
+                let iconHtml = '';
+                if (logo) {
+                    iconHtml = `<img src="${logo}" alt="${partner}" class="partner-logo-img" />`;
+                } else {
+                    iconHtml = `<i class="fa-solid ${icon}"></i>`;
+                }
+                
                 card.innerHTML = `
                     <div class="partner-icon">
-                        <i class="fa-solid ${icon}"></i>
+                        ${iconHtml}
                     </div>
                     <div class="partner-info">
                         <div class="partner-name">${partner}</div>
