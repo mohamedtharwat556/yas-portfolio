@@ -322,7 +322,6 @@
                 <button class="filter-btn active" data-filter="all">Alle</button>
                 <button class="filter-btn" data-filter="company">Unternehmen</button>
                 <button class="filter-btn" data-filter="educational">Bildungseinrichtungen</button>
-                <button class="filter-btn" data-filter="customer">Kunden</button>
             </div>
 
             <div class="partners-grid" id="partnersGrid">
@@ -461,11 +460,12 @@
             "Moharram Islamic Language Schools (Mohamed Wael)",
             "Zamalek Business Center",
             "Al-Sakhra (Virgin Mary School)",
+            "Carnival Trading",
+            "Al-Saqr Private Language Schools",
             "Al-Handasiya Fayoum",
             // Partners without logos (companies and educational institutions only)
             "Al-Alameya Giza",
             "Inter",
-            "Carnival Trading",
             "United",
             "Farida",
             "Nas Technology",
@@ -486,7 +486,6 @@
             "Tayba",
             "Kat für Investition und allgemeinen Handel",
             "Mega Soft",
-            "Al-Saqr Private Language Schools",
             "Inter International School (Mostafa Hafeela)",
             "Semi Language School"
         ];
@@ -509,7 +508,7 @@
             } else if (type === "company") {
                 return "Unternehmen";
             } else {
-                return "Kunde";
+                return "Unternehmen";
             }
         }
 
@@ -647,17 +646,23 @@
             if (name === "Al-Handasiya Fayoum") {
                 return "assets/images/partners/al-handasiya-fayoum-logo.jpg";
             }
+            if (name === "Al-Saqr Private Language Schools") {
+                return "assets/images/partners/alsakr-language-school-logo.jpg";
+            }
+            if (name === "Carnival Trading") {
+                return "assets/images/partners/carnival-trading-logo.png";
+            }
             return null;
         }
 
         // Get icon based on type
         function getPartnerIcon(type) {
-            if (type === "Bildungseinrichtung") {
+            if (type === "educational") {
                 return "fa-graduation-cap";
-            } else if (type === "Unternehmen") {
+            } else if (type === "company") {
                 return "fa-building";
             } else {
-                return "fa-user";
+                return "fa-building";
             }
         }
 

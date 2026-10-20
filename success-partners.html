@@ -309,7 +309,7 @@
         <div class="container">
             <div class="partners-header">
                 <h1>شركاء النجاح</h1>
-                <p>نحن في YAS فخورون بأن نكون شريكًا في النجاح لمجموعة متنوعة من المؤسسات التعليمية والجامعات والشركات والعملاء في مصر. نسعى دائمًا لتقديم أفضل الحلول التقنية والخدمات التي تساهم في نجاح شركائنا.</p>
+                <p>نحن في YAS فخورون بأن نكون شريكًا في النجاح لمجموعة متنوعة من المؤسسات التعليمية والجامعات والشركات في مصر. نسعى دائمًا لتقديم أفضل الحلول التقنية والخدمات التي تساهم في نجاح شركائنا.</p>
             </div>
 
             <div class="partners-search">
@@ -321,7 +321,6 @@
                 <button class="filter-btn active" data-filter="all">الكل</button>
                 <button class="filter-btn" data-filter="company">الشركات</button>
                 <button class="filter-btn" data-filter="educational">المؤسسات التعليمية</button>
-                <button class="filter-btn" data-filter="customer">العملاء</button>
             </div>
 
             <div class="partners-grid" id="partnersGrid">
@@ -461,11 +460,12 @@
             "مدرسة محرم الإسلامية (محمد وائل)",
             "سنتر زمالك بنينس",
             "شركة الصخرة (Virgin Mary School)",
+            "شركه كرنفال للتجاره",
+            "مدارس الصقر الخاصة للغات",
             "الشركة الهندسية الفيوم",
             // Partners without logos (companies and educational institutions only)
             "شركة العالمية الجيزة",
             "شركة انتر",
-            "شركه كرنفال للتجاره",
             "شركة المتحدة",
             "شركة فريدة",
             "شركة ناس تكنولوجى",
@@ -486,7 +486,6 @@
             "شركة طيبة",
             "شركة كت للاستثمار والتجارة العامة",
             "شركة ميجا سوفت",
-            "مدارس الصقر الخاصة للغات",
             "المدرسة الدولية انتر (مصطفى حفيلة)",
             "سيمي مدرسة اللغات"
         ];
@@ -636,6 +635,12 @@
             if (name === "الشركة الهندسية الفيوم") {
                 return "assets/images/partners/al-handasiya-fayoum-logo.jpg";
             }
+            if (name === "مدارس الصقر الخاصة للغات") {
+                return "assets/images/partners/alsakr-language-school-logo.jpg";
+            }
+            if (name === "شركه كرنفال للتجاره") {
+                return "assets/images/partners/carnival-trading-logo.png";
+            }
             return null;
         }
 
@@ -646,7 +651,7 @@
             } else if (type === "company") {
                 return "شركة";
             } else {
-                return "عميل";
+                return "شركة";
             }
         }
 

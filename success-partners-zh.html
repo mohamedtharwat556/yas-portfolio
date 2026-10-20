@@ -322,7 +322,6 @@
                 <button class="filter-btn active" data-filter="all">全部</button>
                 <button class="filter-btn" data-filter="company">公司</button>
                 <button class="filter-btn" data-filter="educational">教育机构</button>
-                <button class="filter-btn" data-filter="customer">客户</button>
             </div>
 
             <div class="partners-grid" id="partnersGrid">
@@ -461,11 +460,12 @@
             "Moharram伊斯兰语言学校",
             "Zamalek商务中心",
             "Al-Sakhra (Virgin Mary School)",
+            "Carnival Trading",
+            "Al-Saqr私立语言学校",
             "Al-Handasiya Fayoum",
             // Partners without logos (companies and educational institutions only)
             "Al-Alameya Giza",
             "Inter",
-            "Carnival Trading",
             "United",
             "Farida",
             "Nas Technology",
@@ -486,7 +486,6 @@
             "Tayba",
             "Kat投资和一般贸易",
             "Mega Soft",
-            "Al-Saqr私立语言学校",
             "Inter国际学校",
             "Semi语言学校"
         ];
@@ -509,7 +508,7 @@
             } else if (type === "company") {
                 return "公司";
             } else {
-                return "客户";
+                return "公司";
             }
         }
 
@@ -647,17 +646,23 @@
             if (name === "Al-Handasiya Fayoum") {
                 return "assets/images/partners/al-handasiya-fayoum-logo.jpg";
             }
+            if (name === "Al-Saqr私立语言学校") {
+                return "assets/images/partners/alsakr-language-school-logo.jpg";
+            }
+            if (name === "Carnival Trading") {
+                return "assets/images/partners/carnival-trading-logo.png";
+            }
             return null;
         }
 
         // Get icon based on type
         function getPartnerIcon(type) {
-            if (type === "教育机构") {
+            if (type === "educational") {
                 return "fa-graduation-cap";
-            } else if (type === "公司") {
+            } else if (type === "company") {
                 return "fa-building";
             } else {
-                return "fa-user";
+                return "fa-building";
             }
         }
 
